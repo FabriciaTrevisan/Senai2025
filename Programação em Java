@@ -2,3 +2,17 @@ Programação em Java
 
 Prof Gustavo Irio Buss
 
+Algoritmo - sequência ordenadas e finitas de instruções para se resolver um problema. Portanto algorítmo é um programa executado pelo computador.
+
+IDE > software para editar e testar >>
+      C/C++: Code Blocks; 
+      Java: Eclipse/NetBeans;
+Compilador > software que transforma o código fonte em código objeto
+Gerador de código ou máquina virtual > software q permite q o programa seja executado
+
+*Java e C# fazem o software rodar em diversos sistemas operacionais.
+
+**Tudo dentro do java tem que etar dentro de uma class**
+
+>> Baixar JDK (Java SE Developer) e algum IDE <<
+
