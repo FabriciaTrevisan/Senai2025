@@ -2,7 +2,7 @@ Programação em Java
 
 Prof Gustavo Irio Buss
 
-Algoritmo - sequência ordenadas e finitas de instruções para se resolver um problema. Portanto algorítmo é um programa executado pelo computador.
+Algoritmo - sequência ordenadas de finitas de instruções para se resolver um problema. Portanto algorítmo é um programa executado pelo computador.
 
 IDE > software para editar e testar >>
       C/C++: Code Blocks; 
@@ -15,4 +15,28 @@ Gerador de código ou máquina virtual > software q permite q o programa seja ex
 **Tudo dentro do java tem que etar dentro de uma class**
 
 >> Baixar JDK (Java SE Developer) e algum IDE <<
+
+*** LISTA 1 ***
+
+1 – Algoritmo é um conjunto ordenado de finitas regras para solucionar problemas. Exemplos:  receitas, procedimentos para executação de tarefas, instruções de GPS.
+2 - É como se fosse o idioma utilizado para criação de códigos de progamação. A linguagem de programação depende do sistema utilizado e cada linguagem tem expressões e comandos próprios.
+3 - IDEs para programar em java: Eclipse, NetBeans e VScode
+4 - A linguagem compilada é feita para um determinado sistema operacional, já a linguagem interpretada é capaz de ser utilizada em diferentes sistemas operacionais sem necessidade de nova compilação.
+5 - Compilador traduz um código de linguagem humana para linguagem de máquina, transformando-o em um programa.
+6 - Exemplos de linguagem compilada:  C, o C++, o Erlang, o Haskell, o Rust e o Go - estas linguagens precisam ser compiladas manualmente primeiro e precisam passar por uma reestruturação cada vez que precisar aplicar uma mudança. Elas são específicas para um SO.
+7 - Vantagens da liguagem interpretada: mais simples de fazer atualizações e alterações no cógigo; tamanho de programa reduzido ;
+7 - Desvantagens da liguagem interpretada: mais lenta que a compilada;  precisa do interpretador para rodar;
+8 - Desenvolvimento e prototipagem rápidos, Depuração mais fácil, Portabilidade e flexibilidade;
+9 -  Abordagem híbrida é quando usa a linguagem compilada e a interpretada, como em java.
+10 - Bytecode é um formato de código intermediário entre o código fonte, o texto que o programador consegue manipular, e o código de máquina, que o computador consegue executar. É o bytecode que a JVM consegue interpretar e faz com que o programa seja independente de SO.
+11 - A máquina virtual é mais rápida e independe do sistema operacional;
+12 - Java é uma linguagem híbrida, ou seja, utiliza uma combinação de liguagem compilada com interpretada. Pois é necessário  compilar o arquivo.java gerando um arquivo.class (bytecodes) e, ao mesmo tempo, a JVM interpreta esse arquivo.class para uma linguagem que o computador possa entender.
+13 - JVM é um software que simula uma máquina virtual, exclusivo para java, que faz com que o programa rode independente do sistema operacional;
+14 -  1 - desligar disjuntor; 
+      2 - pegar a escada e posicioná-la embaixo da lâmpada a ser retirada; 
+      3 - pegar a lâmpada nova;
+      4 - subir a escada e retirar a lâmpada queimada;
+      5 - instalar a lâmpada nova;
+      6 - descer da escada;
+      7 - ligar o disjuntor;
 
