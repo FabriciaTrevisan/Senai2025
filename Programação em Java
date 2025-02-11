@@ -40,6 +40,23 @@ Gerador de código ou máquina virtual > software q permite q o programa seja ex
       6 - descer da escada;
       7 - ligar o disjuntor;
 
+--------------------------------------------------------------------------------------------------------------------------------
+AULA 2
+Sintaxe para declarar variáveis: 
+<tipo> <nome> = <valor inicial>;
+
+Exemplos:
+int idade = 25
+double altura = 1.68
+char sexo = 'F'
+
+TIPOS PRIMITIVOS: dados básicos da linguagem Java.
+
+
+
+
+
+
 
 
 
