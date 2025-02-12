@@ -1,0 +1,49 @@
+import javax.script.SimpleScriptContext;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        //declaração da variável responsável por leitura
+
+        int idade;
+        String nomePaciente;
+        double altura=0, peso=0, divisao;
+        String nomeMae;
+        double imc = peso / (altura * altura);
+        //depois de um double ou de um int, se tiver nextLine, precisa dar nextLine antes
+
+        System.out.println("Digite o nome do paciente: ");
+        nomePaciente = sc.nextLine();
+
+        System.out.println("Digite a idade do paciente: ");
+        idade = sc.nextInt();
+        sc.nextLine();
+
+        System.out.println("Digite o peso do paciente: ");
+        peso = sc.nextDouble();
+
+        System.out.println("Digite a altura do paciente: ");
+        altura = sc.nextDouble();
+        sc.nextLine();
+
+        System.out.println("Digite o nome da mãe do paciente: ");
+        nomeMae = sc.nextLine();
+
+        System.out.println("IMC = " + imc);
+
+
+        System.out.println("Nome do paciente: " + nomePaciente);
+        System.out.println("Nome da mãe: " + nomeMae);
+        System.out.println("Idade do paciente: " + idade);
+        System.out.println("Peso do paciente: " + peso);
+        System.out.println("Altura do paciente: " + altura);
+
+        System.out.println("Nome: " + nomePaciente + "\nMãe: " + nomeMae);
+
+
+        //precisa fechar o Scanner no final do código
+    sc.close();
+    }
+}
