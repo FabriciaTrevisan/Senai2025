@@ -11,7 +11,6 @@ public class Main {
         String nomePaciente;
         double altura=0, peso=0, divisao;
         String nomeMae;
-        double imc = peso / (altura * altura);
         //depois de um double ou de um int, se tiver nextLine, precisa dar nextLine antes
 
         System.out.println("Digite o nome do paciente: ");
@@ -31,6 +30,7 @@ public class Main {
         System.out.println("Digite o nome da mãe do paciente: ");
         nomeMae = sc.nextLine();
 
+        double imc = peso / (altura * altura);
         System.out.println("IMC = " + imc);
 
 
