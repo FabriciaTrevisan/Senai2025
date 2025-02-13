@@ -1,0 +1,60 @@
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+
+        //16 - Escreva um programa que pergunte ao usuário o preço de um produto e um percentual de desconto.
+        // O programa deve calcular o valor final do produto com o desconto aplicado e exibir o resultado.
+
+        double preco, porcentagem, valorFinal;
+        System.out.println("informe o preço: R$" + preco);
+        preco = sc.nextDouble();
+        System.out.println("informe o desconto: " + porcentagem + "%");
+        porcentagem = sc.nextDouble();
+        valorFinal = preco * porcentagem / 100;
+        System.out.println("o valor final é " + valorFinal);
+
+
+
+
+
+        //16 - Leia uma temperatura em Celsius e converta para Fahrenheit usando a fórmula:
+        int celsius;
+        double fahr;
+        System.out.println("informe quantos graus celsius: ");
+        celsius = sc.nextInt();
+        fahr = (celsius * 1.8) + 32;
+        System.out.println(celsius + "ºC equivalem a " + fahr + " F.");
+
+
+        //15 - Leia o peso (kg) e a altura (m) de uma pessoa e calcule seu IMC (Índice de Massa Corporal).
+        double peso, alt, imc;
+        System.out.println("informe o peso em kg:");
+        peso = sc.nextDouble();
+        System.out.println("informe a altura em m: ");
+        alt = sc.nextDouble();
+        imc = peso / (alt * alt);
+        System.out.println("seu IMC é: " + imc);
+
+
+        //14 - Peça ao usuário a base e a altura de um retângulo e calcule sua área.
+        int altura, largura, area;
+        System.out.println("informe a altura: ");
+        altura = sc.nextInt();
+        System.out.println("informe a largura: ");
+        largura = sc.nextInt();
+        area = altura * largura;
+        System.out.println("a área é " + area);
+
+        //13 - Leia dois números e exiba o resto da divisão do primeiro pelo segundo.
+        int num1, num2, resto;
+        System.out.println("digite o dividendo:");
+        num1 = sc.nextInt();
+        System.out.println("digite o divisor:");
+        num2 = sc.nextInt();
+        resto = num1%num2;
+        System.out.println("o resto é " + resto);
+
+        sc.close();
+    }
+}
