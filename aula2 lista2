@@ -1,0 +1,80 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        //12 - Leia um número e exiba o seu quadrado.
+
+        double quad1, quad2;
+        System.out.println("digite um número: ");
+        quad1 = sc.nextDouble();
+        quad2 = quad1 * quad1;
+        System.out.println("o quadrado desse número é: " + quad2);
+
+
+        //11 - Leia três números e exiba a média aritmética deles
+
+        int med1, med2, med3;
+
+        System.out.println("digite um número: ");
+        med1 = sc.nextInt();
+        System.out.println("digite um número: ");
+        med2 = sc.nextInt();
+        System.out.println("digite um número: ");
+        med3 = sc.nextInt();
+        double med4 = (med1 + med2 + med3)/3;
+        System.out.println("A média dos números é: " + med4);
+
+
+        //10 - Leia dois números e exiba o resultado da divisão do primeiro pelo segundo.
+
+        System.out.println("Digite o número para dividir: ");
+        double div1 = sc.nextDouble();;
+        System.out.println("Digite o segundo número da divisão:");
+        double div2 = sc.nextDouble();
+        double div3 = div1 / div2;
+        System.out.println("O resultado é " + div3);
+
+
+
+        //9 - Leia dois números e exiba o produto entre eles.
+
+        double fat1, fat2, fat3;
+        System.out.println("digite fat1: ");
+        fat1 = sc.nextDouble();
+        System.out.println("digite fat2: ");
+        fat2 = sc.nextDouble();
+        fat3 = fat1 * fat2;
+        System.out.println("a multiplicação é " + fat3);
+
+
+        //8 - Leia dois números e exiba a subtração do primeiro pelo segundo.
+        System.out.println("Exercício 8 - subtração");
+        int num1, num2, subtracao;
+
+        System.out.println("Informe o primeiro número da sua subtração: ");
+        num1 = sc.nextInt();
+        System.out.println("informe o segundo número da sua subtração: ");
+        num2 = sc.nextInt();
+
+        subtracao = num1 - num2;
+        System.out.println("A subtração é " + subtracao);
+
+
+
+        //7 - Leia dois números inteiros do usuário e exiba a soma deles.
+        System.out.println("Exercício 7 - soma");
+
+        int x, y, soma;
+        System.out.println("Informe x: ");
+        x = sc.nextInt();
+        System.out.println("Informe y: ");
+        y = sc.nextInt();
+
+        soma = x + y;
+        System.out.println("A soma dos valores é " + soma);
+
+        sc.close();
+    }
+}
