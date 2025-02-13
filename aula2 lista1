@@ -4,28 +4,30 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        //5 - Crie um programa que declare as seguintes variáveis e atribua valores iniciais a elas:
+        
+
+
+
+        //6 - Faça um programa que solicite ao usuário seu nome e sua idade, e depois exiba uma mensagem no formato: "Olá, [nome]! Você tem [idade] anos."
+        
+        System.out.println("Digite seu nome: ");
+        String autor = sc.nextLine();
+        System.out.println("Digite sua idade: ");
+        int idadeAutor = sc.nextInt();
+        System.out.println("Olá, " + autor + ". Você tem " + idadeAutor + " anos.");
+
+//5 - Crie um programa que declare as seguintes variáveis e atribua valores iniciais a elas:
         //●	Um número inteiro
         //●	Um número decimal (double)
         //●	Um caractere
         //●	Um valor booleano
         //Exiba os valores na tela.
 
-        System.out.println("Exercício 5");
-        int num3;
-        double num4;
-        char h;
-        boolean booler;
-
-        System.out.println("Insira um número inteiro: ");
-        num3 = sc.nextInt();
-        System.out.println("Insira um número decimal: ");
-        num4 = sc.nextDouble();
-        System.out.println("Insira um caracter: ");
-        h = sc.next().charAt(0);
-        System.out.println("Insira um valor booleano: ");
-        booler = sc.nextBoolean();
-
+        
+        int num3 = 1;
+        double num4 = 2;
+        char h = 3;
+        boolean booler = true;
 
         System.out.println("seu número inteiro é " + num3);
         System.out.println("seu número decimal é " + num4);
@@ -33,22 +35,7 @@ public class Main {
         System.out.println("seu valor booleano é " + booler);
 
 
-
-        //6 - Faça um programa que solicite ao usuário seu nome e sua idade, e depois exiba uma mensagem no formato: "Olá, [nome]! Você tem [idade] anos."
-        System.out.println("Exrcício 6");
-
-        System.out.println("Digite seu nome: ");
-        String autor = sc.nextLine();
-        System.out.println("Digite sua idade: ");
-        int idadeAutor = sc.nextInt();
-        System.out.println("Olá, " + autor + ". Você tem " + idadeAutor + " anos.");
-
-
-
-
-
         //4 - Conversão de Tipos: Peça ao usuário um número decimal (double) e exiba-o convertido para um número inteiro.
-        System.out.println("Exercício 4.");
         double num1;
         System.out.println("Digite seu número: ");
         num1 = sc.nextDouble();
@@ -58,7 +45,6 @@ public class Main {
 
 
         //3 - Lendo e Exibindo Números: Peça ao usuário para digitar dois números inteiros e exiba os valores digitados.
-        System.out.println("Exercício 3");
         int a, b;
         System.out.println("Digite um valor para a: ");
         a = sc.nextInt();
@@ -71,7 +57,7 @@ public class Main {
 
 
         //2 - Entrada e Saída de Dados: Peça para o usuário digitar seu nome e exiba a mensagem: "Olá, [nome]!".
-        System.out.println("Exercício 2");
+        
         String seuNome;
         System.out.println("Digite seu nome: ");
         seuNome = sc.nextLine();
@@ -79,7 +65,7 @@ public class Main {
 
 
         //1 - Criação de Variáveis: Declare três variáveis do tipo inteiro e exiba seus valores na tela.
-        System.out.println("Exercício 1.");
+        
         int x = 1, y = 2, z = 3;
 
         System.out.println("x = " + x);
