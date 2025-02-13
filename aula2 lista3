@@ -2,16 +2,94 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
+//24 - Peça ao usuário um valor investido e a taxa de juros mensal, e exiba o valor total após um mês de rendimento.
 
-        //16 - Escreva um programa que pergunte ao usuário o preço de um produto e um percentual de desconto.
+        double investimento, taxaJuros, valorFinal;
+        System.out.println("informe o valor investido: R$");
+        investimento = sc.nextDouble();
+        System.out.println("informe a taxa de juros: ");
+        taxaJuros = sc.nextDouble();
+        valorFinal = investimento + (investimento * taxaJuros / 100);
+        System.out.println("O saldo após 01 mês é R$" + valorFinal);
+
+//23 - Peça o valor de uma compra e o número de parcelas e exiba o valor de cada parcela (sem juros).
+
+        double valorCompra, valorParcela;
+        int parcelas;
+
+        System.out.println("informe o valor total da compra: R$");
+        valorCompra = sc.nextDouble();
+        System.out.println("informe o número de parcelas: ");
+        parcelas = sc.nextInt();
+        valorParcela = valorCompra / parcelas;
+        System.out.println("O valor de cada parcela será: R$" + valorParcela);
+
+//22 - Peça ao usuário a quantidade de kWh consumidos e o valor do kWh, calcule e exiba o total da conta de energia.
+
+        int consumo;
+        double valorKw, conta;
+        System.out.println("informa quantos KWH foram consumidos: ");
+        consumo = sc.nextInt();
+        System.out.println("informe o valor do kwh: ");
+        valorKw = sc.nextDouble();
+        conta = consumo * valorKw;
+        System.out.println("sua conta é de R$" + conta); 
+
+//21 - Receba a distância e a velocidade média de um carro e calcule o tempo estimado de viagem.
+
+        double dist, tempo, velo;
+        System.out.println("informe a distância percorrida em km: ");
+        dist = sc.nextDouble();
+        System.out.println("informe a velocidade média: ");
+        velo = sc.nextDouble();
+        tempo = dist / velo;
+        System.out.println("o tempo gasto foi " + tempo + " hora(s).");
+
+//20 - Peça um valor em reais e a cotação do dólar e converta o valor para dólares.
+
+        double reais, cotacao, dollar;
+        System.out.println("informe o valor em reais");
+        reais = sc.nextDouble();
+        System.out.println("informe a cotação");
+        cotacao = sc.nextDouble();;
+        dollar = reais * cotacao;
+        System.out.println("São $" + dollar);
+
+
+// 19 - Receba do usuário uma temperatura em Celsius e exiba a equivalente em Fahrenheit.
+       // Fórmula: F = C × 1.8 + 32.
+
+       int cel;
+       double fahr;
+        System.out.println("informe a temperatura em Celsius:");
+        cel = sc.nextInt();
+        fahr = cel * 1.8 + 32;
+        System.out.println("essa temperatura equivale a " + fahr + " F.");         
+
+
+//18 - Crie um programa que receba o salário de um funcionário e a porcentagem de aumento.
+        // O programa deve calcular e exibir o novo salário.
+
+        double salario, resultado;
+        int aumento;
+        System.out.println("informe o salário atual");
+        salario = sc.nextDouble();
+        System.out.println("informe a porcentagem de aumento");
+        aumento = sc.nextInt();
+        resultado = salario + (salario*aumento/100);
+        System.out.println("o novo salário é " + resultado);
+        
+
+        //17 - Escreva um programa que pergunte ao usuário o preço de um produto e um percentual de desconto.
         // O programa deve calcular o valor final do produto com o desconto aplicado e exibir o resultado.
 
-        double preco, porcentagem, valorFinal;
-        System.out.println("informe o preço: R$" + preco);
+        double preco, porcentagem, desconto, valorFinal;
+        System.out.println("informe o preço: R$");
         preco = sc.nextDouble();
-        System.out.println("informe o desconto: " + porcentagem + "%");
+        System.out.println("informe o desconto em %");
         porcentagem = sc.nextDouble();
-        valorFinal = preco * porcentagem / 100;
+        desconto = preco * porcentagem / 100;
+        valorFinal = preco - desconto;
         System.out.println("o valor final é " + valorFinal);
 
 
