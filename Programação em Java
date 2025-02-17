@@ -51,7 +51,98 @@ double altura = 1.68
 char sexo = 'F'
 
 TIPOS PRIMITIVOS: dados básicos da linguagem Java.
+---------------------------------------------------------------------------------------------------------------------------------
+***OPERADORES COMPARATIVOS***
+> maior
+>= maior e igual
+< menor
+<= menor e igual
+== igual
+!= diferente
+&& e
+|| ou
+! não
 
+
+
+***CONDICIONAL***
+
+//Crie um algoritmo para fazer a leitura e adição de dois valores numéricos, caso o valor somado seja maior que
+//10, efetue a e mostre o resultado.
+        
+      System.out.println("Digite o primeiro número: ");
+        int num1 = sc.nextInt();
+        System.out.println("Digite o segundo número: ");
+        int num2 = sc.nextInt();
+        int soma = num1 + num2;
+
+        if (soma > 10){
+            System.out.println("O valor da soma é " + soma);
+
+        }
+        System.out.println("Fim do código!");
+
+
+***CONDICIONAL ENCADEADA OU COMPOSTA (if/else)
+
+//Crie um algoritmo para fazer a leitura de dois valores numéricos e efetue a adição. Caso o valor somado seja
+//maior ou igual a 10, este deve ser apresentado somando-se a ele mais 5. Caso o valor somado não seja maior ou
+//igual a 10, este deve ser apresentado subtraindo-se 7.
+
+System.out.println("Digite o primeiro número: ");
+        int num1 = sc.nextInt();
+        System.out.println("Digite o segundo número: ");
+        int num2 = sc.nextInt();
+        int soma = num1 + num2;
+
+        if (soma > 10){
+            soma = soma + 5;
+            System.out.println("O valor da soma é " + soma);
+
+        } else {
+            soma = soma - 7;
+            System.out.println("O valor da subtração é " + soma);
+        }
+        System.out.println("Fim do código!");
+
+//Elabore um programa que efetue o cálculo do reajuste de salário de um funcionário. Considere as seguintes possibilidades:
+//Se o salário do funcionário for menor que R$500,00, ele receberá reajuste de 15%;
+//Se o salário for maior ou igual a R$500,00, mas menor ou igual a R$1000,00, seu reajuste será de 10%;
+//Se o salário for maior que R$1000,00, o reajuste deverá ser de 5%.
+
+        System.out.println("digite seu salário");
+        double salarioAtual = sc.nextDouble();
+        double salarioFinal;
+
+        if (salarioAtual < 500){
+            salarioFinal = salarioAtual * 1.15;
+
+        } else if (salarioAtual <= 1000) {
+            salarioFinal = salarioAtual * 1.10;
+
+        } else {
+            salarioFinal = salarioAtual * 1.05;
+        }
+        System.out.printf("O valor do salário antigo é R$ %.2f.", salarioAtual);
+        System.out.printf("%nO valor do salário final será R$ %.2f.", salarioFinal);
+
+
+//Crie um algoritmo que fará a leitura de dois parâmetros para dizer se poderá ir à praia ou não. Para você ir à
+//praia é necessário que as duas condições sejam verdadeiras (ter sol e não ter prova). Se uma delas falhar, você
+//não poderá ir à praia.
+
+
+        int fazSol, temProva;
+        System.out.println("Está sol? (1 - sim / 0 - não)");
+        fazSol = sc.nextInt();
+        System.out.println("Tem prova? (1 - sim / 0 - não)");
+        temProva = sc.nextInt();
+
+        if (fazSol == 1 && temProva == 0){
+            System.out.println("Eba, vamos para praia!!!");
+        } else{
+            System.out.println("Que peninha, hoje não tem praia.");
+        }
 
 
 
