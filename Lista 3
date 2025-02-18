@@ -1,0 +1,283 @@
+//1 - Leia dois números e exiba qual deles é maior.
+
+        System.out.println("Digite o primeiro número");
+        int num1 = sc.nextInt();
+        System.out.println("Digite o segundo número");
+        int num2 = sc.nextInt();
+
+        if (num1 > num2){
+            System.out.println("O maior número é " + num1);
+        } else if (num2 > num1) {
+            System.out.println("O maior núemro é " + num2);
+        }
+        System.out.println("Os números precisam ser diferentes, tente novamente.");
+
+//2 - Leia um número e informe se ele é positivo ou negativo.
+
+        System.out.println("Digite um número");
+        int num1 = sc.nextInt();
+
+        if (num1 > 0){
+            System.out.println("Seu número é positivo");
+        } else if (num1 < 0) {
+            System.out.println("Seu número é negativo");
+
+        }
+        System.out.println("O número precisa ser diferente de zero, tente novamente!");
+
+//3 - Peça ao usuário sua nota (0 a 10) e exiba "Aprovado" se for maior ou igual a 6 e "Reprovado" se for menor que 6.
+
+        System.out.println("Digite sua nota entre 0 e 10");
+        double nota = sc.nextDouble();
+
+        if (nota >= 6 && nota <= 10){
+            System.out.println("Aprovado");
+        } else {
+            System.out.println("Reprovado");
+        }
+
+//4 - Leia o valor de uma compra e aplique um desconto:
+        //Compras acima de R$100 têm 10% de desconto.
+        //Caso contrário, não há desconto.
+
+        System.out.println("Digite o valor da compra");
+        double valorCompra = sc.nextDouble();
+
+        double valorFinal;
+
+        if (valorCompra >=100){
+            valorFinal = valorCompra * 0.9;
+            System.out.println("Sua compra teve desconto de 10%. O valor final é " + valorFinal);
+        } else {
+            System.out.println("Sua compra não obteve desconto, o valor final é " + valorCompra);
+        }
+
+//5 - Leia um número e informe se ele é par ou ímpar.
+
+        int num1;
+        System.out.println("Digite um número inteiro");
+        num1 = sc.nextInt();
+        if (num1 % 2 == 0){
+            System.out.println("Número par.");
+        } else {
+            System.out.println("Número ímpar");
+        }
+
+//6 - Leia a idade de uma pessoa e exiba a categoria:
+        //0 a 12 anos: Criança
+        //13 a 17 anos: Adolescente
+        //18 a 59 anos: Adulto
+        //60 anos ou mais: Idoso
+
+        System.out.println("Digite a idade");
+        int idade = sc.nextInt();
+        
+        if (idade <= 12){
+            System.out.println("Sua categoria é 'Criança'");
+        } else if (idade <= 17) {
+            System.out.println("Sua categoria é 'Adolescente'");
+        } else if (idade <= 59) {
+            System.out.println("Sua categoria é 'Adulto'");
+        } else {
+            System.out.println("Sua categoria é 'Idoso'");
+        }
+
+ //7 - Leia dois números e uma operação matemática (+, -, *, /). Realize o cálculo de acordo com a operação escolhida.
+
+        System.out.println("Digite o primeiro número");
+        int num1 = sc.nextInt();
+        System.out.println("Digite o segundo número");
+        int num2 = sc.nextInt();
+        System.out.println("Digite o símbolo corresponde a operação que deseja realizar (+, -, *, /)");
+        char operacao = sc.next().charAt(0);
+        double resultado;
+
+        if (operacao == '+'){
+            resultado = num1 + num2;
+            System.out.println("O resultado da soma é " + resultado);
+        } else if (operacao == '-') {
+            resultado = num1 - num2;
+            System.out.println("O resultado da subtração é " + resultado);
+        } else if (operacao == '*') {
+            resultado = num1 * num2;
+            System.out.println("O resultado da multiplicação é " + resultado);
+        } else {
+            resultado = num1 / num2;
+            System.out.println("O resultado da divisão é " + resultado);
+        }
+
+//8 - Leia três notas de um aluno e exiba o conceito final:
+        //Média ≥ 9: A
+        //Média ≥ 7: B
+        //Média ≥ 5: C
+        //Média < 5: D
+
+        System.out.println("Digite a nota N1");
+        double n1 = sc.nextDouble();
+        System.out.println("Digite a nota N2");
+        double n2 = sc.nextDouble();
+        System.out.println("Digite a nota N3");
+        double n3 = sc.nextDouble();
+
+        double media = (n1 + n2 + n3)/3;
+
+        if (media < 5){
+            System.out.println("Conceito D");
+        } else if (media >= 5 && media < 7) {
+            System.out.println("Conceito C");
+        } else if (media <= 7 && media < 9) {
+            System.out.println("Conceito B");
+        } else {
+            System.out.println("Conceito A");
+        }
+
+//9 - Leia a idade de um nadador e classifique sua categoria:
+        //Infantil (até 10 anos)
+        //Juvenil (11 a 17 anos)
+        //Adulto (18 anos ou mais)
+
+        System.out.println("informe sua idade");
+        int idade = sc.nextInt();
+
+        if (idade <= 10){
+            System.out.println("Categoria Infantil");
+        } else if (idade <= 17) {
+            System.out.println("Categoria Juvenil");
+        } else {
+            System.out.println("Categoria Adulto");
+        }
+
+//10 - Peça o salário de um funcionário e aplique um aumento:
+        //Até R$ 1.500: aumento de 20%
+        //Entre R$ 1.500 e R$ 3.000: aumento de 10%
+        //Acima de R$ 3.000: aumento de 5%
+
+
+        System.out.println("Qual o salário?");
+        double salarioInicial = sc.nextDouble();
+        double salarioFinal;
+
+        if (salarioInicial <=1500){
+            salarioFinal = salarioInicial * 1.2;
+            System.out.printf("O novo salário será R$%.2f.", salarioFinal);
+        } else if (salarioInicial <= 3000) {
+            salarioFinal = salarioInicial * 1.1;
+            System.out.printf("o novo salário será R$%.2f.", salarioFinal);
+        } else {
+            salarioFinal = salarioInicial * 1.05;
+            System.out.printf("O novo salário será R$%.2f.",salarioFinal);
+        }
+
+//11 - Leia a idade de uma pessoa e informe se ela é obrigada a votar, tem voto facultativo ou não pode votar.
+
+        System.out.println("informe a idade");
+        int idade = sc.nextInt();
+
+        if (idade < 16){
+            System.out.println("Não pode votar");
+        } else if (idade <18) {
+            System.out.println("Voto facultativo");
+        } else if (idade<= 70) {
+            System.out.println("Voto obrigatório");
+        } else{
+            System.out.println("Voto facultativo");
+        }
+
+ //12 - Peça um nome de usuário e senha. Permita acesso somente se os dados forem "admin" e "1234".
+
+        System.out.println("digite o nome de usuario");
+        String usuario = sc.nextLine();
+        System.out.println("digite a senha");
+        String senha = sc.nextLine();
+
+        if (usuario.equals("admin") && senha.equals("1234")){
+            System.out.println("Acesso liberado");
+        } else {
+            System.out.println("Acesso negado");
+        }
+
+//14 - Leia a idade e se a pessoa tem CNH (Sim/Não). Informe se pode dirigir.
+
+        System.out.println("Informme a idade");
+        int idade = sc.nextInt();
+        sc.nextLine();
+        System.out.println("Tem CNH (Sim/Não)");
+        String cnh = sc.nextLine();
+
+        if (idade >= 18 && cnh.equals("Sim")){
+            System.out.println("Pode dirigir");
+
+        } else {
+            System.out.println("Não pode dirigir");
+        }
+
+  //15 - Leia três lados e determine se eles formam um triângulo válido (soma de dois lados deve ser maior que o terceiro).
+
+        System.out.println("informe L1");
+        int l1 = sc.nextInt();
+        System.out.println("informe L2");
+        int l2 = sc.nextInt();
+        System.out.println("informe L3");
+        int l3 = sc.nextInt();
+
+        if (((l1 + l2) > l3 && ((l2 + l3) > l1) && ((l3 + l1) > l2))){
+            System.out.println("triângulo válido");
+        } else {
+            System.out.println("triângulo não válido");
+        }
+
+//16 - Classificação de Notas com Switch-Case. Peça uma nota de 0 a 10 e exiba o conceito:
+        //10 e 9: "Excelente"
+        //8 e 7: "Bom"
+        //6 e 5: "Regular"
+        //4 a 0: "Ruim"
+
+        System.out.println("Informe a nota (0 a 10)");
+        int nota = sc.nextInt();
+        String conceito = null;
+
+        switch (nota){
+            case 0:
+                conceito = "Ruim";
+                break;
+            case 1:
+                conceito = "Ruim";
+                break;
+            case 2:
+                conceito = "Ruim";
+                break;
+            case 3:
+                conceito = "Ruim";
+                break;
+            case 4:
+                conceito = "Ruim";
+                break;
+            case 5:
+                conceito = "Regular";
+                break;
+            case 6:
+                conceito = "Regular";
+                break;
+            case 7:
+                conceito = "Bom";
+                break;
+            case 8:
+                conceito = "Bom";
+                break;
+            case 9:
+                conceito = "Excelente";
+                break;
+            case 10:
+                conceito = "Excelente";
+                System.out.println("conceito " + conceito);
+                break;
+        }
+        System.out.println("o conceito é " + conceito);
+
+
+
+
+
+
+
+
