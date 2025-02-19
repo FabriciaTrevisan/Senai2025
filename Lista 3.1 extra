@@ -1,0 +1,69 @@
+
+ //1. Classificação de Triângulos
+        //Crie um programa que recebe três lados de um triângulo e exibe se ele é equilátero, isósceles ou escaleno. Caso os lados não formem um triângulo, informe.
+
+        System.out.println("Informe lado1:");
+        int lado1 = sc.nextInt();
+        System.out.println("Informe lado2:");
+        int lado2 = sc.nextInt();
+        System.out.println("Informe lado3:");
+        int lado3 = sc.nextInt();
+
+        // Verificar se os lados formam um triângulo
+        if ((lado1 + lado2 > lado3) && (lado2 + lado3 > lado1) && (lado3 + lado1 > lado2)) {
+            if ((lado1 == lado2) && (lado1 == lado3)) {
+                System.out.println("Triângulo Equilátero");
+            } else if (lado1 != lado2 && lado1 != lado3 && lado2 != lado3) {
+                System.out.println("Triângulo Escaleno");
+            } else {
+                System.out.println("Triângulo Isósceles");
+            }
+        } else {
+            System.out.println("Os valores informados não formam um triângulo válido.");
+        }
+
+//2. Calculadora de Tarifas de Energia
+        //Uma empresa de energia cobra da seguinte forma:
+        //Até 100 kWh: R$ 0,50 por kWh
+        //De 101 a 300 kWh: R$ 0,75 por kWh
+        //Acima de 300 kWh: R$ 1,00 por kWh
+        //Há uma taxa fixa de R$ 15,00 para todas as contas.
+        //Escreva um programa que calcula o valor da conta com base no consumo informado.
+
+
+        System.out.println("informe o consumo em kwh");
+        int consumo = sc.nextInt();
+        double fatura = 0;
+
+        if (consumo <= 100){
+            fatura = consumo * 0.50 + 15;
+            System.out.printf("Valor final: R$%.2f", fatura);
+        } else if (consumo <= 300) {
+            fatura = consumo * 0.75 + 15;
+            System.out.printf("Valor final: R$%.2f", fatura);
+        } else if (consumo > 300) {
+            fatura = consumo + 15;
+            System.out.printf("Valor final: R$%.2f", fatura);
+        }
+
+
+//3. Verificador de Ano Bissexto
+        //Crie um programa que lê um ano e informa se ele é bissexto.
+        // Lembre-se: um ano é bissexto se for divisível por 4, mas não por 100, exceto se for divisível por 400.
+
+
+        System.out.println("informe o ano");
+        int ano = sc.nextInt();
+
+        if (ano%400 == 0 || ano % 4 == 0 && ano %100 != 0){
+            System.out.println("ano bisexto");
+        } else {
+            System.out.println("não é bisexto");
+        }
+
+
+        
+
+
+
+            
