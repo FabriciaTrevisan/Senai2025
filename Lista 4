@@ -9,14 +9,164 @@
             numero = numero + 1;
         }
 
+ //2 - Leia números do usuário e some-os. O programa deve parar quando o usuário digitar um número negativo.
+
+        int num = 0, soma = 0;
+
+        while (num >= 0){
+            System.out.println("digite um número (para sair digite um número negativo).");
+            num = sc.nextInt();
+            if (num > 0){
+                soma = soma + num;
+            }
+
+        }
+        System.out.println("A soma é; " + soma);
 
 
+//3 - O usuário deve adivinhar um número secreto (exemplo: 7). Enquanto ele não acertar, o programa deve pedir um novo número.
+
+        int num=0;
+        while (num!=7){
+            System.out.println("digite um número");
+            num = sc.nextInt();
+        }
+        System.out.println("Parabéns, você acertou");
 
 
+//4 - Peça um número ao usuário e exiba sua tabuada de 1 a 10 usando while.
+
+        int num, tab = 1, resultado;
+
+        System.out.println("digite um número");
+        num = sc.nextInt();
+
+        while (tab <=10){
+            resultado = num * tab;
+            System.out.println(num + "X" + tab + "=" + resultado);
+            tab = tab + 1;
+
+        }
 
 
+//5 - O programa deve permitir a entrada de várias notas e calcular a média. A entrada para quando o usuário digitar -1.
+
+        double nota, soma = 0, qtdeNotas = 0, media;
+
+        while (true){
+            System.out.println("digite a nota: ");
+            nota = sc.nextDouble();
+
+            if (nota == -1){
+                break;
+            }
+            soma = soma + nota;
+            qtdeNotas = qtdeNotas + 1;
+
+        }
+        media = soma / qtdeNotas;
+        System.out.println("A média é " + media);
 
 
+//6 - Apresente um menu com opções numéricas para o usuário (exemplo: 1 - Continuar, 2 - Sair).
+        // O programa deve continuar exibindo o menu até que o usuário escolha Sair.
 
+        int opcao;
+        do {
+            System.out.println("Digite uma opção: \n1 para continuar \n2 para sair");
+            opcao = sc.nextInt();
+
+        } while (opcao != 2);
+
+
+//7 - Peça ao usuário uma senha e verifique se está correta.
+        // O programa deve continuar pedindo a senha até que o usuário insira a correta.
+
+
+        String senhaCorreta = "1234", senhaDigitada;
+
+        do {
+            System.out.println("digite a senha: ");
+            senhaDigitada = sc.nextLine();
+
+            if (!senhaCorreta.equals(senhaCorreta));
+            System.out.println("Senha incorreta, tente novamente.");
+
+        } while (!senhaDigitada.equals(senhaCorreta));
+        System.out.println("Senha ok");
+
+ //8 - O usuário deve digitar dois números e o programa soma.
+        // Após a exibição da soma, deve perguntar se deseja continuar ou sair.
+
+
+        int num1, num2, soma;
+        int opcao;
+
+        do {
+            System.out.println("digite o primeiro número");
+            num1 = sc.nextInt();
+            System.out.println("digite o segundo número");
+            num2 = sc.nextInt();
+            soma = num1 + num2;
+            System.out.println("a soma é " + soma);
+
+            System.out.println(" digite: \n1 para continuar e \n2 para parar");
+            opcao = sc.nextInt();
+
+
+        } while (opcao == 1);
+        System.out.println("ok");
+
+//9 - Gere um número aleatório entre 1 e 10 e peça para o usuário adivinhar.
+        // Continue pedindo números até que o usuário acerte.
+
+        int numSecreto = 7, numDigitado;
+        do {
+            System.out.println("Advinhe o número secreto. \nDigite um número.");
+            numDigitado = sc.nextInt();
+        } while (numDigitado != numSecreto);
+        System.out.println("Parabéns, você acertou!");
+
+
+ //10 - O usuário deve inserir valores para depositar em sua conta.
+        // O programa para quando o usuário digitar 0 e exibe o saldo final.
+
+        double valor, saldo=0;
+
+        do {
+            System.out.println("Digite o valor do depósito em R$:");
+            valor = sc.nextDouble();
+            saldo = saldo + valor;
+        } while (valor != 0);
+        System.out.println("O saldo é R$" + saldo);
+
+
+//11 - Exiba os números de 10 a 1 usando um laço for.
+
+        for (int i = 10; i >= 1; i--) {
+            System.out.println(i);
+        }
+
+
+//12 - Utilize um laço for para exibir apenas os números pares de 1 a 20.
+
+        for (int i = 1; i <= 20; i++) {
+            if (i%2==0){
+                System.out.println(i);
+            }
+        }
+
+
+//13 - Peça um número N e calcule a soma de 1 até N usando um laço for.
+
+        System.out.println("digite um número N");
+        int n = sc.nextInt();
+        int soma = 0;
+
+        for (int i = 1; i <= n; i++) {
+            soma +=i;
+        }
+
+        System.out.println("A soma de 1 até " + n + " é " + soma);
 
 
