@@ -1,12 +1,10 @@
-***WHILE***
 
 //1- Escreva um programa que exiba os números de 1 a 10 usando while.
 
-        int numero=1;
-
-        while (numero <= 10){
-            System.out.println(numero);
-            numero = numero + 1;
+        int num = 1;
+        while (num <= 10){
+            System.out.println(num);
+            num += 1;
         }
 
  //2 - Leia números do usuário e some-os. O programa deve parar quando o usuário digitar um número negativo.
@@ -168,5 +166,41 @@
         }
 
         System.out.println("A soma de 1 até " + n + " é " + soma);
+
+
+
+ //14 - Peça um número e verifique se ele é primo usando um laço for.
+
+        //for (int i = 1; i <= n; i++)
+
+        int num;
+        boolean primo = true;
+
+        System.out.println("digite um numero inteiro positivo");
+        num = sc.nextInt();
+
+        for (int i = 2; i < num; i++) {
+            if (num%i == 0){
+                primo = false;
+            }
+        }
+        if (primo == true){
+            System.out.println("número primo");
+
+        } else {
+            System.out.println("não é primo");
+        }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
