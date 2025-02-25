@@ -1,4 +1,6 @@
 //Exercícios sobre Array
+ //System.out.println(Arays.toString(numeros));
+
 
 //1 - Declare um array de inteiros com tamanho 5 e preencha-o com valores fornecidos pelo usuário.
         //Exiba os valores armazenados.
@@ -98,23 +100,39 @@
         //Exiba os nomes armazenados.
 
 
-        ArrayList<String> lista = new ArrayList<>();
+         ArrayList<String> lista = new ArrayList<>();
         String nome = "";
-
         while (!nome.equals("sair")){
-            System.out.println("digite o nome - digite SAIR para finalizar");
+            System.out.println("digite um nome - digite SAIR para finalizar");
             nome = sc.nextLine();
             lista.add(nome);
-
         }
-        for(String nomeX : lista){
-            System.out.println(nomeX);
+        for (String nomeAdd : lista){
+            System.out.println(nomeAdd);
         }
-        System.out.println(lista);
+
+ //Soma e Média
+//7 - Crie um ArrayList<Integer> e peça ao usuário para inserir números até que ele digite um número negativo.
+        //Calcule e exiba a soma e a média dos números inseridos.
 
 
+        ArrayList<Integer> meusNumeros = new ArrayList<>();
+        int num = 0, soma = 0, contagem = 0;
+        double media;
 
+        while (true){
 
+            System.out.println("digite um número positivo - digite um número negativo para encerrar");
+            num = sc.nextInt();
+            if (num <0){
+                break;
+            }
+            meusNumeros.add(num);
+            soma += num;
+            contagem +=1;
+        }
+        media = soma / contagem;
+        System.out.printf("A soma é %d e a média é %.2f.", soma, media);
 
 
 
