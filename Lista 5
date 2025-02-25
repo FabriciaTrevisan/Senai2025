@@ -91,7 +91,26 @@
 
 
 
+//6 - Exercícios sobre ArrayList
+        //6 - Lista de Nomes
+        //Crie um ArrayList<String> para armazenar nomes de pessoas.
+        //Permita que o usuário insira nomes até digitar "sair".
+        //Exiba os nomes armazenados.
 
+
+        ArrayList<String> lista = new ArrayList<>();
+        String nome = "";
+
+        while (!nome.equals("sair")){
+            System.out.println("digite o nome - digite SAIR para finalizar");
+            nome = sc.nextLine();
+            lista.add(nome);
+
+        }
+        for(String nomeX : lista){
+            System.out.println(nomeX);
+        }
+        System.out.println(lista);
 
 
 
