@@ -168,7 +168,83 @@
 
 
 
+//Busca na Lista
+        //9 - Peça ao usuário para inserir 5 nomes em um ArrayList<String>.
+        //Em seguida, peça um nome e verifique se ele está na lista.
 
+
+        ArrayList<String> lista = new ArrayList<>();
+        String nome = "", conferir;
+
+        for (int i = 0; i < 5; i++) {
+            System.out.println("Digite o nome:");
+            nome = sc.nextLine();
+            lista.add(nome);
+
+        }
+        System.out.println("Sua lista é; " + lista);
+
+        System.out.println("digite um nome para conferência:");
+        conferir = sc.nextLine();
+
+        if (lista.contains(conferir)){
+            System.out.println("Seu nome está na lista");
+        }else {
+            System.out.println("Seu nome não está na lista");
+        }
+
+        ///10 - Ordenação de Lista
+        //Crie um ArrayList<Double> e insira 10 números aleatórios.
+        //Ordene a lista em ordem crescente e exiba o resultado.
+
+        Random random = new Random();
+        ArrayList<Double> aleatorios = new ArrayList<>();
+
+        for (int i = 0; i < 10; i++) {
+            aleatorios.add(random.nextDouble()*100);
+        }
+        System.out.println(aleatorios);
+
+        //Collections.sort(aleatorios); ou:
+        aleatorios.sort(null);
+        System.out.println(aleatorios);
+
+
+//11 -  //Lista de Tarefas
+        //11 - Crie um ArrayList<String> para armazenar tarefas.
+        //Permita ao usuário adicionar, remover e listar tarefas até que ele escolha sair.
+
+        ArrayList<String> listaDeTarefas = new ArrayList<>();
+        int opcao = 0;
+        String tarefaAdd = "";
+
+        do {
+            System.out.println("Escolha uma opção: \n1 - adicionar tarefa \n2 - exibir lista de tarefas \n3 -  remover tarefa\n4 - sair");
+            opcao = sc.nextInt();
+            sc.nextLine();
+
+            switch (opcao) {
+                case 4:
+                    break;
+                case 1:
+                    System.out.println("Informe a tarefa para adicionar:");
+                    tarefaAdd = sc.nextLine();
+                    listaDeTarefas.add(tarefaAdd);
+                    break;
+                case 2:
+                    System.out.println(listaDeTarefas);
+                    break;
+                case 3:
+                    System.out.println(listaDeTarefas);
+                    System.out.println("Informe a tarefa a excluir");
+
+                    //usar contains ou digitar o valor
+                    break;
+            }
+
+
+
+        } while (opcao!=4);
 
 
 
