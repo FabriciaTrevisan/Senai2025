@@ -134,6 +134,39 @@
         media = soma / contagem;
         System.out.printf("A soma é %d e a média é %.2f.", soma, media);
 
+//8 - Removendo Números Ímpares
+        //Crie um ArrayList<Integer> com 10 números aleatórios entre 1 e 100.
+        //Remova todos os números ímpares e exiba a lista final.
+
+
+        Random gerador = new Random();
+
+        ArrayList<Integer> listaInicial = new ArrayList<>();
+        ArrayList<Integer> listaFinal = new ArrayList<>();
+
+        for (int i = 0; i < 10; i++) {
+            listaInicial.add(gerador.nextInt(1,100));
+
+        }
+        System.out.println(listaInicial);
+
+        for (Integer numero : listaInicial){
+            if (numero%2==0){
+                listaFinal.add(numero);
+            }
+        }
+        System.out.println("A lista atualizada é - forma 1: ");
+        System.out.println(listaFinal);
+
+        for (int i = 0; i < listaInicial.size(); i++) {
+            listaInicial.removeIf(numero -> numero%2!=0);
+
+        }
+
+        System.out.println("A lista atualizada é - forma 2:");
+        System.out.println(listaInicial);
+
+
 
 
 
