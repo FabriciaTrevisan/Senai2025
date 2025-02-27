@@ -1,0 +1,93 @@
+  //Faça um programa para ler as medidas dos lados de dois triângulos X e Y (suponha
+        //medidas válidas). Em seguida, mostrar o valor das áreas dos dois triângulos e dizer qual dos
+        //dois triângulos possui a maior área. Use a fórmula de heron para calcular a área de um
+        //triângulo a partir das medidas de seus lados A, B e C.
+
+//***********Com objeto:***********
+
+//**********objeto Triangulo:************
+
+public class Triangulo {
+    public double ladoA;
+    public double ladoB;
+    public double ladoC;
+
+
+    public double calculaArea(){
+        double p = (ladoA + ladoB + ladoC) / 2.0;
+        double area = Math.sqrt(p * (p - ladoA) * (p - ladoB) * (p - ladoB));
+        return area;
+
+    }
+
+//***************main*************
+
+
+        Triangulo x = new Triangulo();
+        Triangulo y = new Triangulo();
+
+        // Recebendo os dados do triangulo x
+        System.out.println("Informe as medidas do triangulo X: ");
+        x.ladoA = sc.nextDouble();
+        x.ladoB = sc.nextDouble();
+        x.ladoC = sc.nextDouble();
+
+        // Recebemdp os dados do triangulo y
+        System.out.println("Informe as medidas do triangulo Y: ");
+        y.ladoA = sc.nextDouble();
+        y.ladoB = sc.nextDouble();
+        y.ladoC = sc.nextDouble();
+
+        // Calculo da area - Triangulo X
+        double areaX = x.calculaArea();
+        // Calculo da area - Triangulo Y
+        double areaY = y.calculaArea();
+
+
+        System.out.printf("Area do Triangulo X = %.4f\n", x.calculaArea());
+        System.out.printf("Area do Triangulo Y = %.4f\n", y.calculaArea());
+
+        // Verifica qual triangulo tem area maior
+        if (areaX > areaY) {
+            System.out.println("Area maior: Triangulo X!");
+        } else {
+            System.out.println("Area maior: Triangulo Y!");
+        }
+
+//********sem objeto*************
+
+// Declarando variaveis
+        double xA, xB, xC, yA, yB, yC;
+
+        // Recebendo os dados do triangulo x
+        System.out.println("Informe as medidas do triangulo X: ");
+        xA = sc.nextDouble();
+        xB = sc.nextDouble();
+        xC = sc.nextDouble();
+
+        // Recebemdp os dados do triangulo y
+        System.out.println("Informe as medidas do triangulo Y: ");
+        yA = sc.nextDouble();
+        yB = sc.nextDouble();
+        yC = sc.nextDouble();
+
+        // Calculo da area - Triangulo X
+        double p = (xA + xB + xC) / 2.0;
+        double areaX = Math.sqrt(p * (p - xA) * (p - xB) * (p - xC));
+
+        // Calculo da area - Triangulo Y
+        p = (yA + yB + yC) / 2.0;
+        double areaY = Math.sqrt(p * (p - yA) * (p - yB) * (p - yC));
+
+        System.out.printf("Area do Triangulo X = %.4f\n", areaX);
+        System.out.printf("Area do Triangulo Y = %.4f\n", areaY);
+
+        // Verifica qual triangulo tem area maior
+        if (areaX > areaY) {
+            System.out.println("Area maior: Triangulo X!");
+        } else {
+            System.out.println("Area maior: Triangulo Y!");
+        }
+
+
+
