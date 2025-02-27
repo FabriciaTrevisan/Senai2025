@@ -1,0 +1,139 @@
+//1 - Crie uma classe chamada Pessoa com os seguintes atributos:
+//nome (String)
+//idade (int)
+//altura (double)
+//Adicione um método chamado apresentar() que imprime:
+//"Olá, meu nome é [nome], tenho [idade] anos e minha altura é [altura] metros."
+
+package entities;
+
+public class Pessoa {
+    public String nome;
+    public int idade;
+    public double altura;
+
+    public void apresentar(){
+        System.out.printf("Seu nome é %s, tem %d anos e %.2fm de altura.", nome, idade, altura);
+    }
+}
+
+System.out.println("digite o nome:");
+        pessoa.nome=sc.nextLine();
+
+        System.out.println("digite a idade;");
+        pessoa.idade=sc.nextInt();
+
+        System.out.println("digite a altura em metros");
+        pessoa.altura=sc.nextDouble();
+
+        pessoa.apresentar();
+
+//2 - Crie uma classe carro, conforme o diagrama:
+        //O método exibirDetalhes() deve imprimir todos os detalhes da seguinte forma:
+        //("Carro: " + marca + "Modelo:  " + modelo + ", Ano: " + ano);.
+
+package entities;
+
+public class Carro {
+
+    public String marca;
+    public String modelo;
+    public int ano;
+
+    public void exibirDetalhes(){
+        System.out.printf("Carro: %s; Modelo: %s; Ano: %d.", marca, modelo, ano);
+    }
+}
+System.out.println("informe marca: ");
+        carro.marca=sc.nextLine();
+
+        System.out.println("informe modelo: ");
+        carro.modelo=sc.nextLine();
+
+        System.out.println("informe ano: ");
+        carro.ano=sc.nextInt();
+
+        System.out.println();
+        carro.exibirDetalhes();
+
+ //3 - Crie uma classe chamada Produto com:
+    //Atributos:
+    //nome (String)
+    //preco (double)
+    //Métodos:
+    //toString(): deve retornar uma string formatada com os dados do produto.
+    //A saída esperada:
+    //Produto: Notebook | Preço: R$ 3500.0
+
+package entities;
+
+public class Produto {
+
+   
+
+    public String nome;
+    public double preco;
+
+    public String toString() {
+        return "Produto:"
+                + nome
+                +" | Preço : R$"
+                +String.format("%.2f",preco);
+    }
+}
+
+Produto produto = new Produto();
+
+
+        System.out.println("digite o produto");
+        produto.nome = sc.nextLine();
+        System.out.println("digite o preço");
+        produto.preco=sc.nextDouble();
+
+        System.out.println(produto);
+
+
+        sc.close();
+
+
+//4 - Escreva uma classe chamada Currículo para montar o seu currículo profissional.
+        // Ela deve ter os atributos: nome, idade, profissão e experiências. Além disso,
+        // deve ter um método sobreMim que imprime um resumo do currículo da seguinte forma:
+        // "Olá, eu sou {nome}, tenho {idade}, trabalho como {profissao}, e tenho experiência
+        // com {experiencias}".
+
+package entities;
+
+public class Curriculo {
+//  
+    public String nome;
+    public int idade;
+    public String profissao;
+    public int experiencia;
+
+    public void sobreMim(){
+        System.out.printf("Olá, eu sou %s, tenho %d anos, trabalho com %s e tenho %d anos de experiência.", nome, idade, profissao, experiencia);
+    }
+}
+
+ Scanner sc = new Scanner(System.in);
+        Curriculo curriculo = new Curriculo();
+
+
+        System.out.println("informe o nome");
+        curriculo.nome=sc.nextLine();
+        System.out.println("qual sua idade?");
+        curriculo.idade=sc.nextInt();
+        sc.nextLine();
+        System.out.println("informe sua profissão");
+        curriculo.profissao = sc.nextLine();
+        System.out.println("tempo de experiência (em anos)");
+        curriculo.experiencia=sc.nextInt();
+        sc.nextLine();
+
+        curriculo.sobreMim();
+
+
+
+
+
