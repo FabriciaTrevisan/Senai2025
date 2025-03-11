@@ -180,9 +180,6 @@ package entities;
 public class Funcionario {
 
 
-////6 - Crie uma classe Funcionário contendo os atributos: nome, salário bruto e imposto.
-
-
     public String nome;
     public double salarioBruto;
     public double imposto;
