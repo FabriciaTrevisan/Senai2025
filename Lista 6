@@ -44,7 +44,7 @@ public class Carro {
         System.out.printf("Carro: %s; Modelo: %s; Ano: %d.", marca, modelo, ano);
     }
 }
-System.out.println("informe marca: ");
+        System.out.println("informe marca: ");
         carro.marca=sc.nextLine();
 
         System.out.println("informe modelo: ");
@@ -69,8 +69,7 @@ package entities;
 
 public class Produto {
 
-   
-
+   x
     public String nome;
     public double preco;
 
@@ -82,7 +81,7 @@ public class Produto {
     }
 }
 
-Produto produto = new Produto();
+        Produto produto = new Produto();
 
 
         System.out.println("digite o produto");
@@ -116,7 +115,7 @@ public class Curriculo {
     }
 }
 
- Scanner sc = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         Curriculo curriculo = new Curriculo();
 
 
@@ -132,6 +131,182 @@ public class Curriculo {
         sc.nextLine();
 
         curriculo.sobreMim();
+
+ //5 - Crie uma classe Retângulo que possui os atributos altura e largura.
+        // Crie os métodos, um para calcular a área e o outro para calcular o perímetro.
+        // Faça o programa para ler os valores da largura e altura e, em seguida,
+        // mostrar na tela o valor de sua área e perímetro.
+
+    package entities;
+
+    public class Retangulo {
+
+    public double altura;
+    public double largura;
+
+    public double calculoperimetro(){
+        double perimetro = altura * 2 + largura * 2;
+        return perimetro;
+    }
+
+    public double calculoArea(){
+        double area = altura * largura;
+        return area;
+
+    }
+
+
+        Retangulo retangulo = new Retangulo();
+
+        System.out.println("informe altura");
+        retangulo.altura = sc.nextDouble();
+
+        System.out.println("informe largura");
+        retangulo.largura = sc.nextDouble();
+
+        System.out.println("o perímetro é " + retangulo.calculoperimetro());
+        System.out.println("a área é " + retangulo.calculoArea());
+
+
+ //6 - Crie uma classe Funcionário contendo os atributos: nome, salário bruto e imposto.
+        // Faça o programa para ler os dados de um funcionário (nome, salário bruto e imposto)
+        // e depois mostre os dados do funcionário na tela. Em seguida, aumentar o salário do
+        // funcionário com base em uma porcentagem dada (somente o salário bruto é afetado pela porcentagem)
+        // e mostrar novamente os dados do funcionário.
+
+
+package entities;
+
+public class Funcionario {
+
+
+////6 - Crie uma classe Funcionário contendo os atributos: nome, salário bruto e imposto.
+
+
+    public String nome;
+    public double salarioBruto;
+    public double imposto;
+    public double aumento;
+
+    public double salarioLiquido(){
+        double salarioLiquido = salarioBruto - imposto;
+        return salarioLiquido;
+    }
+    public double salarioFinal(){
+        double salarioFinal = salarioBruto + salarioBruto * aumento / 100;
+        return salarioFinal;
+    }
+
+}
+
+Funcionario funcionario = new Funcionario();
+
+        System.out.println("informe nome do funcionário");
+        funcionario.nome = sc.nextLine();
+        System.out.println("informe salário bruto inicial");
+        funcionario.salarioBruto = sc.nextDouble();
+        System.out.println("informe imposto em R$");
+        funcionario.imposto = sc.nextDouble();
+
+        System.out.println("Nome: " + funcionario.nome);
+        System.out.println("Salário bruto: R$" + funcionario.salarioBruto);
+        System.out.println("Imposto: " + funcionario.imposto);
+        System.out.println("Salário líquido; R$" + funcionario.salarioLiquido());
+        System.out.println("informe o aumento em %:");
+        funcionario.aumento = sc.nextDouble();
+        System.out.println("O novo salário bruto de " + funcionario.nome + " é: R$" + funcionario.salarioFinal());
+
+
+
+//7 - Fazer um programa para ler o nome de um aluno e as três notas que ele obteve nos três trimestres do ano.
+        // Ao final, mostrar qual a nota final do aluno no ano. Dizer também se o aluno está aprovado (PASS) ou não
+        // (FAILED) e, em caso negativo, quantos pontos faltam para o aluno obter o mínimo para ser aprovado
+        // (que é 60% da nota).
+
+public class Aluno {
+
+    public String nome;
+    public double nota1;
+    public double nota2;
+    public double nota3;
+
+    public double notaFinal (){
+        double notaFinal = (nota1 + nota2 + nota3) / 3;
+        return notaFinal;
+    }
+
+}
+
+
+
+Aluno aluno = new Aluno();
+
+        System.out.println("informe o nome do aluno");
+        aluno.nome = sc.nextLine();
+        System.out.println("informe a primeira nota");
+        aluno.nota1 = sc.nextDouble();
+        System.out.println("informe a segunda nota");
+        aluno.nota2 = sc.nextDouble();
+        System.out.println("informe a terceira nota");
+        aluno.nota3 = sc.nextDouble();
+
+        System.out.println(" a nota final de " + aluno.nome + " é " + aluno.notaFinal());
+        double notaFaltante;
+        if (aluno.notaFinal() >= 6.0){
+            System.out.println("PASS");
+        } else {
+            notaFaltante = 6.0 - aluno.notaFinal();
+            System.out.println("FAILED");
+            System.out.println("faltou " + notaFaltante + " para passar.");
+        }
+
+
+ //8 - Crie uma classe ContaBancaria, com os atributos titular e saldo.
+        // Crie o método atualizarSaldo que recebe um valor Double como parâmetro e
+        // incrementa esse valor no saldo atual. Crie o método toString que retorna os
+        // dados da conta no formato: { Titular: Nome do Cliente, Saldo: 0.0 } 
+
+     package entities;
+
+   public class ContaBancaria {
+   public String titular;
+   public double saldo = 0;
+
+   public double atualizarSaldo(double valor){
+       return saldo += valor;
+   }
+
+   public String toString(){
+       return "{ Titular: "
+               + titular
+               + ", Saldo R$"
+               + String.format("%.2f", saldo)
+               + "}";
+   }
+}
+
+
+
+
+ContaBancaria contaBancaria = new ContaBancaria();
+
+        ContaBancaria conta = new ContaBancaria();
+
+        System.out.println("informe o nome do titular");
+        contaBancaria.titular = sc.nextLine();
+
+        System.out.println("informe o valor do depósito");
+        contaBancaria.atualizarSaldo(sc.nextDouble());
+
+        System.out.println("informe outro valor do depósito");
+        contaBancaria.atualizarSaldo(sc.nextDouble());
+
+
+        System.out.println(contaBancaria.toString());
+
+
+
+
 
 
 
