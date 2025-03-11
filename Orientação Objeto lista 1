@@ -266,6 +266,7 @@ Aluno aluno = new Aluno();
      package entities;
 
    public class ContaBancaria {
+
    public String titular;
    public double saldo = 0;
 
