@@ -1,0 +1,167 @@
+
+ //1 - Crie uma classe chamada ConversorTemperatura que tenha dois métodos estáticos:
+        //celsiusParaFahrenheit(double celsius): Converte Celsius para Fahrenheit.
+        //fahrenheitParaCelsius(double fahrenheit): Converte Fahrenheit para Celsius.
+        //Chame os métodos e exiba as conversões no console
+
+package entities;
+import com.sun.source.tree.BreakTree;
+public class ConversorTemperatura {
+    
+    public static double fahrenheitParaCelsius (double fahrenheit){
+        return 5.0 / 9.0 * (fahrenheit - 32);
+    }
+
+    public static double celsiusParaFahrenheit(double celsius){
+        return celsius * 1.8 + 32;
+    }
+
+MAIN:
+        System.out.println(ConversorTemperatura.fahrenheitParaCelsius(89.99));
+
+        System.out.println(ConversorTemperatura.celsiusParaFahrenheit(32.22));
+
+
+//2 - Crie uma classe Calculadora com métodos estáticos:
+        //somar(int a, int b)
+        //subtrair(int a, int b)
+        //multiplicar(int a, int b)
+        //dividir(int a, int b), que deve retornar 0 se a divisão for por zero.
+        //Teste todos os métodos no main e exiba os resultados.
+
+package entities;
+
+public class Calculadora {
+
+   
+    public static int somar (int a, int b){
+        return a + b;
+    }
+    public static int subtrair (int a, int b){
+        return a - b;
+    }
+    public static int multiplicar (int a, int b){
+        return a * b;
+    }
+    public static double dividir (int a , int b){
+        return a / b;
+    }
+
+MAIN:
+        int a = 20, b = 4;
+        System.out.println("a = " + a + " b = " + b + ".");
+
+        System.out.println("a + b =  " + Calculadora.somar(a,b));
+        System.out.println("a - b = : " + Calculadora.subtrair(a,b));
+        System.out.println("a * b = : " + Calculadora.multiplicar(a,b));
+        System.out.println("a / b = : " + Calculadora.dividir(a,b));
+
+
+//3 - Crie uma classe Calcular, nela deve constar o valor estático e constante de PI. Ela terá os métodos estáticos:
+    //calcularCircunferencia (double raio) - considere o cálculo 2 * PI * raio;
+    //calcularVolume(double raio) - considere o cálculo 4 * PI * raio³ / 3;
+    //No main, receba o valor de raio e chame os métodos disponíveis e mostre o valor de PI.
+
+
+package entities;
+
+public class Calcular {
+    
+    public static double pi = 3.14;
+
+    public static double calcularCircunferencia(double raio){
+        return 2 * pi * raio;
+    }
+    public static double calcularVolume (double raio){
+        return 4 * pi * raio / 3;
+    }
+}
+
+MAIN:
+        System.out.println("informe o raio.");
+        double raio = sc.nextDouble();
+
+        System.out.println("A circunferência mede: " + Calcular.calcularCircunferencia(raio));
+        System.out.println("O volume é: " + Calcular.calcularVolume(raio));
+        System.out.println("pi = " + Calcular.pi);
+
+
+
+//        4 - Crie uma classe chamada Carro que tenha os seguintes atributos:
+//        marca (String)
+//        modelo (String)
+//        ano (int)
+//        A classe deve ter:
+//        Um construtor padrão que define valores padrão para os atributos.
+//        Um construtor sobrecarregado que recebe os três atributos como parâmetros.
+//        Um método chamado exibirInfo() que imprime as informações do carro.
+
+package entities;
+
+public class Carro {
+
+    public String marca;
+    public String modelo;
+    public int ano;
+
+    //construtor vazio
+    public Carro(){
+
+    }
+
+    //construtor sobrecarregado de 2 atributos
+    public Carro(String marca, String modelo) {
+        this.marca = marca;
+        this.modelo = modelo;
+    }
+
+    //construtor sobrecarregado de 3 atributos
+    public Carro(String marca, String modelo, int ano){
+        this.marca = marca;
+        this.modelo = modelo;
+        this.ano = ano;
+    }
+
+    public String exibirInfo() {
+        return "Carro " +
+                "marca='" + marca + '\'' +
+                ", modelo='" + modelo + '\'' +
+                ", ano=" + ano +
+                '}';
+    }
+}
+
+MAIN:
+
+//        Carro carro = new Carro();
+//        Carro carro2 = new Carro("Ford", "Ka", 2012);
+//        Carro carro3 = new Carro("Toyota", "Corolla");
+
+//        System.out.println(carro.exibirInfo());
+//        System.out.println(carro2.exibirInfo());
+//        System.out.println(carro3.exibirInfo());
+
+        System.out.println("informe os dados do veículo:");
+        System.out.println("Marca: ");
+        String marca = sc.nextLine();
+
+        System.out.println("Modelo: ");
+        String modelo = sc.nextLine();
+
+        System.out.println("Ano: ");
+        int ano = sc.nextInt();
+
+        Carro carro = new Carro(marca, modelo, ano);
+        System.out.println(carro.exibirInfo());
+
+
+
+
+
+
+
+
+
+
+
+
