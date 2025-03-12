@@ -155,9 +155,252 @@ MAIN:
         System.out.println(carro.exibirInfo());
 
 
+//5- Crie uma classe chamada Aluno com os seguintes atributos:
+//nome (String)
+//idade (int)
+//curso (String)
+//A classe deve ter:
+//Um construtor que recebe apenas o nome e define valores padrão para os outros atributos.
+//Um construtor que recebe nome e idade.
+//Um construtor que recebe todos os atributos.
+//Um método exibirAluno() para imprimir os dados do aluno.
+
+
+package entities;
+
+public class Alunos {
+
+    public String nome;
+    public int idade;
+    public  String curso;
+
+    //    Um construtor que recebe apenas o nome e define valores padrão para os outros atributos.
+    public Alunos(String nome) {
+        this.nome = nome;
+    }
+
+    //    Um construtor que recebe nome e idade.
+    public Alunos(String nome, int idade){
+        this.nome = nome;
+        this.idade = idade;
+    }
+
+    //    Um construtor que recebe todos os atributos.
+    public  Alunos (String nome, int idade, String curso){
+        this.nome=nome;
+        this.idade=idade;
+        this.curso=curso;
+    }
+
+//    Um método exibirAluno() para imprimir os dados do aluno.
+
+    public String exibirAluno() {
+        return "Alunos {" +
+                "nome=' " + nome + '\'' +
+                ", idade= " + idade +
+                ", curso=' " + curso + '\'' +
+                '}';
+    }
+}
+
+MAIN:
+
+Alunos alunos = new Alunos("Ana", 18, "moda");
+
+        System.out.println(alunos.exibirAluno());
+
+
+//6 - Crie uma classe chamada Retangulo com os seguintes atributos:
+        //largura (double)
+        //altura (double)
+        //A classe deve ter:
+        //Um construtor que recebe os dois valores.
+        //Um construtor que recebe apenas um valor e assume que o retângulo é um quadrado.
+        //Um método calcularArea() que retorna a área do retângulo.
+
+package entities;
+
+public class Retangulo {
+   
+    public double largura;
+    public double altura;
+
+    public Retangulo(double altura, double largura){
+        this.altura=altura;
+        this.largura=largura;
+    }
+
+    public Retangulo(double altura){
+        this.altura=altura;
+        largura=altura;
+    }
+
+        public String calcularArea() {
+        return ("A área do retângulo é "+ largura * altura);
+    }
+}
+
+MAIN:
+
+        Retangulo retangulo = new Retangulo(4);
+        Retangulo retangulo1 = new Retangulo(4,6);
+
+        System.out.println(retangulo.calcularArea());
+        System.out.println(retangulo1.calcularArea());
+
+
+//7 - Crie uma classe chamada ContaBancaria com os seguintes atributos:
+    //titular (String)
+    //saldo (double)
+    //A classe deve ter:
+    //Um construtor que recebe apenas o titular e define saldo como 0.0.
+    //Um construtor que recebe o titular e o saldo inicial.
+    //Um método exibirSaldo() que imprime o titular e o saldo da conta.
+
+
+package entities;
+
+public class ContaBancaria {
+    
+    public String titular;
+    public double saldo;
+
+    public ContaBancaria(String titular){
+        this.titular=titular;
+        saldo = 0.0;
+    }
+
+    public ContaBancaria(String titular, double saldo){
+        this.titular=titular;
+        this.saldo=saldo;
+        }
+
+    public double deposito(double valor){
+        return saldo += valor;
+    }
+
+    public String exibirSaldo(){
+        return "Titular: " + titular + " Saldo atual: R$" + saldo +".";
+
+    }
+
+
+}
+
+MAIN
+
+        ContaBancaria contaBancaria = new ContaBancaria("Bia", 100.00);
+        ContaBancaria contaBancaria2 = new ContaBancaria("Ana");
+
+        System.out.println(contaBancaria.exibirSaldo());
+        System.out.println(contaBancaria2.exibirSaldo());
+
+        System.out.println("digite o valor do depósito");
+        double deposito = sc.nextDouble();
+
+        contaBancaria.deposito(deposito);
+        System.out.println(contaBancaria.exibirSaldo());
+
+
+//8 - Crie uma classe chamada Livro com os seguintes atributos:
+        //titulo (String)
+        //autor (String)
+        //anoPublicacao (int)
+        //A classe deve ter:
+        //Um construtor que recebe apenas o título e define valores padrão para os outros atributos.
+        //Um construtor que recebe o título e o autor.
+        //Um construtor que recebe todos os atributos.
+        //Um método exibirLivro() para imprimir os dados do livro.
+
+package entities;
+
+public class Livro {
+   
+    public String titulo;
+    public String autor;
+    public  int anoPublicacao;
+
+    public Livro(String titulo){
+        this.titulo=titulo;
+    }
+
+    public Livro(String titulo, String autor){
+        this.titulo=titulo;
+        this.autor=autor;
+    }
+
+    public Livro(String titulo, String autor, int anoPublicacao){
+        this.titulo=titulo;
+        this.autor=autor;
+        this.anoPublicacao=anoPublicacao;
+    }
+
+    public String exibirLivro() {
+        return "Livro: " + titulo + ", autor: " + autor + ", ano de Publicacao: " + anoPublicacao;
+    }
+}
+
+MAIN:
+
+        Livro livro = new Livro("Como surgem as inovações");
+        Livro livro1 = new Livro("Como surgem as inovações", "Matt Riddley");
+        Livro livro2 = new Livro("Como surgem as inovações", "Matt Ridley", 2015);
+
+        System.out.println(livro.exibirLivro());
+        System.out.println(livro1.exibirLivro());
+        System.out.println(livro2.exibirLivro());
 
 
 
+ //9 - Crie uma classe chamada Celular com os seguintes atributos:
+        //marca (String)
+        //modelo (String)
+        //preco (double)
+        //A classe deve ter:
+        //Um construtor que recebe apenas a marca e define valores padrão para os outros atributos.
+        //Um construtor que recebe a marca e o modelo.
+        //Um construtor que recebe todos os atributos.
+        //Um método exibirCelular() para imprimir os dados do celular.
+
+
+ackage entities;
+
+public class Celular {
+    
+    public String marca;
+    public String modelo;
+    public double preco;
+
+    public Celular(String marca){
+        this.marca=marca;
+    }
+    public Celular(String marca, String modelo){
+        this.marca=marca;
+        this.modelo=modelo;
+    }
+
+    public Celular(String marca, String modelo, double preco) {
+        this.marca = marca;
+        this.modelo = modelo;
+        this.preco = preco;
+    }
+
+    public String exibirCelular(){
+        return "Celular marca: " + marca + ", modelo: " + modelo + "Preço: R$" + preco;
+    }
+
+}
+
+MAIN:
+
+        Celular celular = new Celular("iphone");
+        Celular celular2 = new Celular("iphone", "SE 2G ");
+        Celular celular3 = new Celular("iphone", "SE 2G ", 4000.00);
+
+
+        System.out.println(celular.exibirCelular());
+        System.out.println(celular2.exibirCelular());
+        System.out.println(celular3.exibirCelular());
 
 
 
