@@ -54,7 +54,12 @@ MAIN:
         System.out.println("a + b =  " + Calculadora.somar(a,b));
         System.out.println("a - b = : " + Calculadora.subtrair(a,b));
         System.out.println("a * b = : " + Calculadora.multiplicar(a,b));
+
+        if (b==0){
+        System.out.println("a / b = : 0");
+        } else{
         System.out.println("a / b = : " + Calculadora.dividir(a,b));
+        }
 
 
 //3 - Crie uma classe Calcular, nela deve constar o valor estático e constante de PI. Ela terá os métodos estáticos:
@@ -81,9 +86,9 @@ MAIN:
         System.out.println("informe o raio.");
         double raio = sc.nextDouble();
 
-        System.out.println("A circunferência mede: " + Calcular.calcularCircunferencia(raio));
-        System.out.println("O volume é: " + Calcular.calcularVolume(raio));
-        System.out.println("pi = " + Calcular.pi);
+        System.out.printf("A circunferência mede %.2f cm. ", Calcular.calcularCircunferencia(raio));
+        System.out.printf("\nO volume é %.2f cm3", Calcular.calcularVolume(raio));
+        System.out.println("\nPi = " + Calcular.pi);
 
 
 
