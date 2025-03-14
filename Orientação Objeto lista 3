@@ -9,7 +9,7 @@ private double saldo;
 public Conta(int numeroConta, String titular, double saldo){
     this.numeroConta=numeroConta;
     this.titular=titular;
-    this.saldo=saldo;
+    deposito(saldo);
 }
 //construtor
 public Conta(int numeroConta, String titular){
@@ -81,7 +81,7 @@ public class Main {
         System.out.println("tem depósito inicial? Responda S ou N");
         String opcao = sc.nextLine();
 
-        if (opcao.equals("S")| opcao.equals("s")){
+        if (opcao.equals("S")| opcao.equals("s")){ //outra forma de ignorar se maiuscula ou minuscula é usar; equals.ignoreCase.
             System.out.println("informe valor do depósito inicial");
             double saldo = sc.nextDouble();
             conta = new Conta(numeroConta, titular, saldo);
@@ -95,6 +95,10 @@ public class Main {
         System.out.println("informe o valor para novo depósito");
         double deposito = sc.nextDouble();
         conta.deposito(deposito);
+        
+        //outra forma de fazer, sem a variável local:
+        //System.out.println("informe o valor para novo depósito");
+        //conta.depositto(sc.netDouble());
 
         System.out.println(conta);
 
