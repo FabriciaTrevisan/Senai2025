@@ -1,0 +1,110 @@
+package entities;
+
+public class Conta {
+
+private int numeroConta;
+private String titular;
+private double saldo;
+//contrutor
+public Conta(int numeroConta, String titular, double saldo){
+    this.numeroConta=numeroConta;
+    this.titular=titular;
+    this.saldo=saldo;
+}
+//construtor
+public Conta(int numeroConta, String titular){
+    this.numeroConta=numeroConta;
+    this.titular=titular;
+    }
+
+    public int getNumeroConta() {
+    return numeroConta;
+    }
+    public String getTitular() {
+    return titular;
+    }
+    public double getSaldo() {
+    return saldo;
+    }
+
+    public void setTitular(String titular) {
+        this.titular = titular;
+    }
+
+    //metodo
+    public void deposito(double valor) {
+        if (valor > 0) {
+            saldo += valor;
+        } else{
+            System.out.println("O valor deve ser maior que zero");
+        }
+    }
+
+    public void saque(double valor){
+        if (valor <= saldo - 3 && valor >= 0){
+            saldo -= valor + 3;
+        }else {
+            System.out.println("valor de saque inválido");
+        }
+
+    }
+
+
+    @Override
+    public String toString() {
+        return "{ Conta "+ numeroConta + " | titular: " + titular + " | saldo: R$ " + saldo + "}";
+    }
+}
+
+
+
+MAIN:
+
+import entities.Conta;
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        Conta conta;
+
+        System.out.println("informe número da conta");
+        int numeroConta = sc.nextInt();
+        sc.nextLine();
+
+        System.out.println("informe nome completo");
+        String titular = sc.nextLine();
+
+        System.out.println("tem depósito inicial? Responda S ou N");
+        String opcao = sc.nextLine();
+
+        if (opcao.equals("S")| opcao.equals("s")){
+            System.out.println("informe valor do depósito inicial");
+            double saldo = sc.nextDouble();
+            conta = new Conta(numeroConta, titular, saldo);
+
+        }else {
+            conta = new Conta(numeroConta, titular);
+        }
+
+        System.out.println(conta);
+
+        System.out.println("informe o valor para novo depósito");
+        double deposito = sc.nextDouble();
+        conta.deposito(deposito);
+
+        System.out.println(conta);
+
+        System.out.println("informe o valor do saque");
+        double saque = sc.nextDouble();
+        conta.saque(saque);
+
+
+
+        System.out.println(conta);
+
+    }
+}
