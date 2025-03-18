@@ -1,0 +1,34 @@
+Enumerações - enum
+
+enum - usa para diferentes status de um pedido, por exemplo, ou para definir diferentes perfis de acesso a um sistema;
+
+package entities.enums;
+public enum Status{
+//todos em maiusculo
+PENDENTE,
+PROCESSADO,
+CONCLUIDO,
+CANCELADO;
+}
+
+//usar toUpperCase() transforma tudo em maiusculo;
+
+//valueOf
+***
+
+package entities;
+
+import java.time.LocalDate;
+
+import entities.enums.PedidoStatus;
+
+public class Pedido{
+
+---------------------
+Composição
+
+permite que um objeto contenha outro;
+relação "tem-um" ou "tem-vários";
+
+
+
