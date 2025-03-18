@@ -32,3 +32,16 @@ Dicas importantes:
 •	Não crie a variável do objeto dentro do if (Conta conta) senão o objeto não existirá fora, apenas atribua o valor a esse objeto dentro do laço if( = new Conta() ); 
 •	crie setters apenas para atributos que poderão ser alterados; 
 •	Valide sempre o valor do depósito e saque utilizando if, no caso do saque precisará utilizar operador lógico AND (&&).
+
+PARA CÓDIGO IMPLEMENTADO:
+
+Atualizando o código:
+
+Chegou uma nova atualização para ser desenvolvido. Agora será necessário adicionar um atributo senha, para que seja armazenada a senha da conta.
+1- o programa deverá pedir para o usuário criar a conta com número da conta, titular, senha e o saldo continua sendo opcional; 
+2- depois da conta criada, o programa deve solicitar o login ao usuário (numero da conta e senha), ou seja, precisará validar se o usuário digitou corretamente(Utilize métodos para validar esses campos).
+3- Caso o usuário digite 3 vezes a senha errada, o programa deverá parar e informar que a senha foi bloqueada;
+4- Caso o login esteja correto, deverá dar boas vindas ao usuário e aparecer um menu com as opções e realizar as ações ("1 - Ver Saldo, 2 - Depositar, 3 - Sacar, 4 - Alterar Nome do Titular, 5 - Mostrar detalhes da conta e 6 - Sair");
+
+DICA: utilize laços de repetições dentro de outros laços (um validando o login, outro para mostrar o menu e realizar as ações), utilize a palavra reservada “continue” para voltar para o começo do laço, para receber a opção desejada utilize o switch-case;
+
