@@ -6,8 +6,9 @@ public class Conta {
     private String titular;
     private double saldo;
     private String senha;
+    //private static final double TAXA_SAQUE = 3.0 >> código do prof >> usa letra maíuscula para chamar atenção do desenvolvedor de que é um static final
 
-    //contrutor
+    //contrutores
     public Conta(int numeroConta, String titular, String senha, double saldo){
         this.numeroConta=numeroConta;
         this.titular=titular;
