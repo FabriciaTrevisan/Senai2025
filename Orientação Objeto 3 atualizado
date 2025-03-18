@@ -1,0 +1,189 @@
+package entities;
+
+public class Conta {
+
+    private int numeroConta;
+    private String titular;
+    private double saldo;
+    private String senha;
+
+    //contrutor
+    public Conta(int numeroConta, String titular, String senha, double saldo){
+        this.numeroConta=numeroConta;
+        this.titular=titular;
+        this.senha=senha;
+        deposito(saldo);
+    }
+    //construtor
+    public Conta(int numeroConta, String titular, String senha){
+        this.numeroConta=numeroConta;
+        this.titular=titular;
+        this.senha=senha;
+    }
+
+    public int getNumeroConta() {
+        return numeroConta;
+    }
+    public String getTitular() {
+        return titular;
+    }
+    public double getSaldo() {
+        return saldo;
+    }
+
+    public void setTitular(String titular) {
+        this.titular = titular;
+    }
+
+    //metodo
+    public void deposito(double valor) {
+        if (valor > 0) {
+            saldo += valor;
+        } else{
+            System.out.println("O valor deve ser maior que zero");
+        }
+    }
+
+    public void saque(double valor){
+        if (valor <= saldo - 3 && valor >= 0){
+            saldo -= valor + 3;
+        }else {
+            System.out.println("valor de saque inválido");
+        }
+
+    }
+
+    public boolean validarSenha (String senhaDigitada) {
+        if (this.senha.equals(senhaDigitada)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
+    @Override
+    public String toString() {
+        return "{ Conta "+ numeroConta + " | titular: " + titular + " | saldo: R$ " + saldo + "}";
+    }
+}
+
+
+
+MAIN
+
+
+import entities.Conta;
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        Conta conta;
+
+        System.out.println("Bem vindo ao seu banco!");
+        System.out.println();
+        System.out.println("Vamos cadastrar sua conta.");
+
+        System.out.print("Informe número da conta: ");
+        int numeroConta = sc.nextInt();
+        sc.nextLine();
+
+        System.out.print("Informe nome completo: ");
+        String titular = sc.nextLine();
+
+        System.out.print("Digite uma senha: ");
+        String senha = sc.nextLine();
+
+        System.out.print("Deseja fazer depósito inicial? Responda S ou N: ");
+        String opcao = sc.nextLine();
+
+        if (opcao.equals("S") | opcao.equals("s")) { //outra forma de ignorar se maiuscula ou minuscula é usar; equals.ignoreCase.
+            System.out.print("Informe o valor do depósito inicial: R$");
+            double saldo = sc.nextDouble();
+            conta = new Conta(numeroConta, titular, senha, saldo);
+
+        } else {
+            conta = new Conta(numeroConta, titular, senha);
+        }
+
+        System.out.print(conta.getTitular() + ", faça login para movimentar sua conta.");
+        System.out.println();
+
+        System.out.println();
+        int tentativa = 0;
+
+        while (true) {
+            System.out.print("Informe o número da conta: ");
+            int numeroConta1 = sc.nextInt();
+            sc.nextLine();
+
+            if (numeroConta1 != conta.getNumeroConta()) {
+                System.out.println("Número de conta inexistente. Tente novamente...");
+                continue;
+            }
+
+
+            System.out.print("Informe sua senha: ");
+            String senhaDigitada = sc.nextLine();
+            String opcao2;
+
+
+            if (!conta.validarSenha(senhaDigitada)) {
+                System.out.println("Senha incorreta, tente novamente.");
+                tentativa++;
+                System.out.println("Tentavias restantes: 0" + (3 - tentativa));
+                if (tentativa == 3) {
+                    System.out.println("Número de tentativas atingiu limite.");
+                    break;
+                }
+                continue;
+            }
+            while (true) {
+                System.out.println("Seja bem vindo " + conta.getTitular());
+                System.out.println("Escolha uma opção:");
+                System.out.println("1 - Ver Saldo \n2 - Depositar \n3 - Sacar \n4 - Alterar Nome do Titular \n5 - Mostrar detalhes da conta \n6 - Sair");
+                opcao2 = sc.nextLine();
+                
+
+                switch (opcao2) {
+                    case "1":
+                        System.out.println("Seu saldo atual é R$" + conta.getSaldo());
+                        break;
+                    case "2":
+                        System.out.print("Informe o valor para depósito; R$");
+                        double deposito = sc.nextDouble();
+                        conta.deposito(deposito);
+                        break;
+                    case "3":
+                        System.out.print("Informe o valor que deseja sacar: R$");
+                        double saque = sc.nextDouble();
+                        conta.saque(saque);
+                        break;
+                    case "4":
+                        System.out.print("Informe o novo nome: ");
+                        String nomeNovo = sc.nextLine();
+                        conta.setTitular(nomeNovo);
+                        break;
+                    case "5":
+                        System.out.print(conta);
+                        break;
+                    case "6":
+                        System.out.println("Até breve!");
+                        return;
+                    default:
+                        System.out.println("Opção inválida!");
+                        break;
+
+                }
+
+
+            }
+
+
+        }
+    }
+}
