@@ -1,0 +1,202 @@
+MAIN---------------
+import entities.Autor;
+import entities.Conta;
+import entities.Livro;
+import entities.enums.Genero;
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("CADASTRO DE AUTOR");
+        System.out.print("Digite o nome do autor: ");
+        String nomeAutor=sc.nextLine();
+
+        Autor autor = new Autor(nomeAutor);
+        System.out.println();
+
+        while (true){
+            System.out.println("CADASTRO DE LIVROS");
+            System.out.println("Informme o título do livro ou digite SAIR");
+            String titulo = sc.nextLine();
+            if (titulo.equals("sair")){
+                break;
+            }
+            System.out.println("Informe o gênero: FICCAO, MISTERIO, FANTASIA, BIOGRAFIA, TECNICO, ROMANCE, TERROR, ACAO");
+            String generoString = sc.nextLine().toUpperCase();
+
+            Livro livro = new Livro(titulo, Genero.valueOf(generoString), autor);
+            autor.adicionarLivro(livro);
+            System.out.println("Livro adicionado com sucesso.");
+
+        }
+
+        System.out.println("LIVRO ADICIONADO");
+
+        System.out.println(autor);
+
+        sc.close();
+    }
+}
+-----------------------------------------
+package entities.enums;
+
+public enum Genero {
+    FICCAO,
+    MISTERIO,
+    FANTASIA,
+    BIOGRAFIA,
+    TECNICO,
+    ROMANCE,
+    TERROR,
+    ACAO;
+}
+-----------------------------------------
+package entities;
+
+import entities.enums.Genero;
+
+public class Livro {
+
+    private String titulo;
+    private Genero genero;
+    private Autor autor; //composição 1:1
+
+        public Livro(String titulo, Genero genero, Autor autor) {
+        this.titulo = titulo;
+        this.genero = genero;
+        this.autor = autor;
+    }
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public Genero getGenero() {
+        return genero;
+    }
+
+    public Autor getAutor() {
+        return autor;
+    }
+---------------------------------------------
+package entities;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Autor {
+
+
+    private String nome;
+    private List<Livro> livros; //lista de livros ou array de livros >> composição 1:muitos
+
+    public Autor(String nome) {
+        this.nome = nome;
+        this.livros = new ArrayList<>();
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public List<Livro> getLivros() {
+        return livros;
+    }
+
+    public void adicionarLivro(Livro livro){
+        this.livros.add(livro);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder(); //é uma lista para add o que quer printar
+        sb.append("Autor: ");
+        sb.append(this.nome);
+        sb.append("\nLivros: \n");
+
+        for (Livro livro : livros){
+            //vou percorrer a classse Livros, cada item chama livro na lista livros
+            sb.append(" - Título: ");
+            sb.append(livro.getTitulo());
+            sb.append(" | Gênero: ");
+            sb.append(livro.getGenero());
+            sb.append("\n");
+        }
+        return sb.toString();
+    }
+
+}
+-----------------------------------------------
+package entities;
+
+public class Conta {
+
+    private int numeroConta;
+    private String titular;
+    private double saldo;
+    private String senha;
+    //private static final double TAXA_SAQUE = 3.0 >> código do prof >> usa letra maíuscula para chamar atenção do desenvolvedor de que é um static final
+
+    //contrutores
+    public Conta(int numeroConta, String titular, String senha, double saldo){
+        this.numeroConta=numeroConta;
+        this.titular=titular;
+        this.senha=senha;
+        deposito(saldo);
+    }
+    //construtor
+    public Conta(int numeroConta, String titular, String senha){
+        this.numeroConta=numeroConta;
+        this.titular=titular;
+        this.senha=senha;
+    }
+
+    public int getNumeroConta() {
+        return numeroConta;
+    }
+    public String getTitular() {
+        return titular;
+    }
+    public double getSaldo() {
+        return saldo;
+    }
+
+    public void setTitular(String titular) {
+        this.titular = titular;
+    }
+
+    //metodo
+    public void deposito(double valor) {
+        if (valor > 0) {
+            saldo += valor;
+        } else{
+            System.out.println("O valor deve ser maior que zero");
+        }
+    }
+
+    public void saque(double valor){
+        if (valor <= saldo - 3 && valor >= 0){
+            saldo -= valor + 3;
+        }else {
+            System.out.println("valor de saque inválido");
+        }
+
+    }
+
+    public boolean validarSenha (String senhaDigitada) {
+        if (this.senha.equals(senhaDigitada)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "{ Conta "+ numeroConta + " | titular: " + titular + " | saldo: R$ " + saldo + "}";
+    }
+}
