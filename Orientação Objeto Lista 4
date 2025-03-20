@@ -1,47 +1,34 @@
 MAIN--------------
-Exercício - Orientação a objeto - Java
+import entities.Cliente;
+import entities.Pedido;
+import entities.Restaurante;
 
-Você foi contratado para desenvolver um aplicativo de comida.
+import java.util.Scanner;
 
-Requisitos do Sistema
-1. Classe Cliente
-Atributos: 
-nome,
-telefone
-lista de pedidos.
-Métodos: 
-adicionarPedido(Pedido pedido): Adiciona um pedido à lista.
-getPedidos(): Retorna a lista de pedidos.
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
 
-2. Classe Restaurante
-Atributos: 
-nome 
-tipoCulinaria.
+        //precisa criar os objetos (popular os objetos)
 
-3. Classe Pedido
-Atributos: 
-restaurante: Representa o restaurante do pedido.
-valorTotal: O valor total do pedido.
-status: Um enum que representa o status do pedido.
-Métodos:
-atualizarStatus(): Atualiza o status do pedido na sequência: REALIZADO → PREPARANDO → A CAMINHO → ENTREGUE.
-exibirPedido(int numeroPedido): Exibe os detalhes do pedido.
-	
-4. Enum StatusPedido
-Define os possíveis estados do pedido: 
-REALIZADO
-PREPARANDO
-A_CAMINHO
-ENTREGUE.
+        Restaurante restaurante =new Restaurante("Pizza Hut", "Italiana");
+        Restaurante restaurante1=new Restaurante("Sushi House", "Oriental");
 
+        Pedido pedido1=new Pedido(restaurante, 100);
+        Pedido pedido2=new Pedido(restaurante, 120);
 
-Funcionalidades do Programa
+        Cliente cliente=new Cliente("Gustavo", "43989898989");
 
-O programa deve exibir um menu interativo permitindo que o usuário:
-Faça um novo pedido, informando o nome do restaurante, tipo de culinária e valor total.
-Liste todos os pedidos feitos, mostrando detalhes como restaurante, valor e status.
-Atualize o status de um pedido específico, avançando para o próximo estágio até a entrega.
-Saia do sistema.
+        cliente.adicionarPedido(pedido1);
+        cliente.adicionarPedido(pedido2);
+
+        System.out.println(cliente.exibirPedidos());
+        pedido1.atualizarStatus();
+        System.out.println(cliente.exibirPedidos());
+
+        sc.close();
+    }
+}
 
 -------------------------------------------
 package entities.enums;
