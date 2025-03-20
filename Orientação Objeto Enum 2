@@ -1,0 +1,182 @@
+MAIN--------------
+Exercício - Orientação a objeto - Java
+
+Você foi contratado para desenvolver um aplicativo de comida.
+
+Requisitos do Sistema
+1. Classe Cliente
+Atributos: 
+nome,
+telefone
+lista de pedidos.
+Métodos: 
+adicionarPedido(Pedido pedido): Adiciona um pedido à lista.
+getPedidos(): Retorna a lista de pedidos.
+
+2. Classe Restaurante
+Atributos: 
+nome 
+tipoCulinaria.
+
+3. Classe Pedido
+Atributos: 
+restaurante: Representa o restaurante do pedido.
+valorTotal: O valor total do pedido.
+status: Um enum que representa o status do pedido.
+Métodos:
+atualizarStatus(): Atualiza o status do pedido na sequência: REALIZADO → PREPARANDO → A CAMINHO → ENTREGUE.
+exibirPedido(int numeroPedido): Exibe os detalhes do pedido.
+	
+4. Enum StatusPedido
+Define os possíveis estados do pedido: 
+REALIZADO
+PREPARANDO
+A_CAMINHO
+ENTREGUE.
+
+
+Funcionalidades do Programa
+
+O programa deve exibir um menu interativo permitindo que o usuário:
+Faça um novo pedido, informando o nome do restaurante, tipo de culinária e valor total.
+Liste todos os pedidos feitos, mostrando detalhes como restaurante, valor e status.
+Atualize o status de um pedido específico, avançando para o próximo estágio até a entrega.
+Saia do sistema.
+
+-------------------------------------------
+package entities.enums;
+
+public enum StatusPedido {
+    REALIZADO,
+    PREPARANDO,
+    A_CAMINHO,
+    ENTREGUE;
+}
+--------------------------------------------
+package entities;
+
+public class Restaurante {
+    private String nome;
+    private String tipoCulinaria;
+
+
+    //construtor
+    public Restaurante(String nome, String tipoCulinaria) {
+        this.nome = nome;
+        this.tipoCulinaria = tipoCulinaria;
+    }
+
+    //getters
+    public String getNome() {
+        return nome;
+    }
+    public String getTipoCulinaria() {
+        return tipoCulinaria;
+    }
+
+}
+--------------------------------------------------
+package entities;
+
+import entities.enums.StatusPedido;
+
+public class Pedido {
+    private Restaurante restaurante;
+    private double valorTotal;
+    private StatusPedido status;
+
+    //construtor
+    public Pedido(Restaurante restaurante, double valorTotal) {
+        this.restaurante = restaurante;
+        this.valorTotal = valorTotal;
+        this.status = StatusPedido.REALIZADO;
+    }
+
+
+    public Restaurante getRestaurante() {
+        return restaurante;
+    }
+    public double getValorTotal() {
+        return valorTotal;
+    }
+    public StatusPedido getStatusPedido() {
+        return status;
+    }
+
+
+    public void atualizarStatus(){
+        switch (status){
+            case REALIZADO -> this.status = StatusPedido.PREPARANDO;
+            case PREPARANDO -> this.status = StatusPedido.A_CAMINHO;
+            case A_CAMINHO -> this.status = StatusPedido.ENTREGUE;
+            case ENTREGUE -> System.out.println("O pedido já foi entregue!");
+            }
+        }
+
+    public void exibirPedido (int valor){ //o valor será o número do pedido
+        //System.out.println("Pedido: \n");
+        System.out.println("Restaurante: " + restaurante.getNome() + " (" + restaurante.getTipoCulinaria() + ").");
+        System.out.println("Valor: R$" + valorTotal);
+        System.out.println("Status do pedido: " + status);
+
+    }
+
+    @Override
+    public String toString() {
+        return "Pedido {" +
+                "restaurante =" + restaurante.getNome() +
+                ", valorTotal =" + valorTotal +
+                ", status =" + status +
+                '}';
+    }
+}
+---------------------------------------------------------
+package entities;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Cliente {
+
+    private String nome;
+    private String telefone;
+    private List<Pedido> pedidos;
+
+    public Cliente(String nome, String telefone) {
+        this.nome = nome;
+        this.telefone = telefone;
+        this.pedidos=new ArrayList<>();
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public Cliente(List<Pedido> pedidos) {
+        this.pedidos = pedidos;
+    }
+
+    public void adicionarPedido(Pedido pedido){ //estou criando uma variável, precisa informar a Classe e a variável
+        this.pedidos.add(pedido);               //usa pedidos pq é o que eu declarei acima, dentro da lista.
+
+        System.out.println("Pedido adicionado com sucesso!");
+    }
+
+    public String exibirPedidos(){
+        StringBuilder sb = new StringBuilder();
+        sb.append("\n CLIENTE: \n");
+        sb.append(this.nome).append(" | tel: ").append(this.telefone).append("\n");
+        sb.append("Pedidos: \n"); //agora quero printar os valores do array:
+        for (int i = 0; i < pedidos.size(); i++) { //usa .size para pegar até o último item
+            sb.append("- Pedido #").append(i+1).append(pedidos.get(i).toString()).append("\n"); //para chamar os pedidos, vou usar outra classe, por isso preciso usar o .get.
+
+        }
+        return sb.toString(); //nesse momento o sistema transforma tudo em texto
+
+    }
+
+}
