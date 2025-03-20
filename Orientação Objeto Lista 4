@@ -30,7 +30,7 @@ public class Main {
     }
 }
 
--------------------------------------------
+StatusPedido-------------------------------------------
 package entities.enums;
 
 public enum StatusPedido {
@@ -39,7 +39,7 @@ public enum StatusPedido {
     A_CAMINHO,
     ENTREGUE;
 }
---------------------------------------------
+Restaurante--------------------------------------------
 package entities;
 
 public class Restaurante {
@@ -62,7 +62,7 @@ public class Restaurante {
     }
 
 }
---------------------------------------------------
+Pedido--------------------------------------------------
 package entities;
 
 import entities.enums.StatusPedido;
@@ -117,7 +117,7 @@ public class Pedido {
                 '}';
     }
 }
----------------------------------------------------------
+Cliente---------------------------------------------------------
 package entities;
 
 import java.util.ArrayList;
@@ -155,9 +155,9 @@ public class Cliente {
 
     public String exibirPedidos(){
         StringBuilder sb = new StringBuilder();
-        sb.append("\n CLIENTE: \n");
+        sb.append("\nCLIENTE: \n");
         sb.append(this.nome).append(" | tel: ").append(this.telefone).append("\n");
-        sb.append("Pedidos: \n"); //agora quero printar os valores do array:
+        sb.append("PEDIDOS: \n"); //agora quero printar os valores do array:
         for (int i = 0; i < pedidos.size(); i++) { //usa .size para pegar até o último item
             sb.append("- Pedido #").append(i+1).append(pedidos.get(i).toString()).append("\n"); //para chamar os pedidos, vou usar outra classe, por isso preciso usar o .get.
 
