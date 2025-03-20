@@ -1,0 +1,43 @@
+Exercício - Orientação a objeto - Java
+
+Você foi contratado para desenvolver um aplicativo de comida.
+
+Requisitos do Sistema
+1. Classe Cliente
+Atributos: 
+nome,
+telefone
+lista de pedidos.
+Métodos: 
+adicionarPedido(Pedido pedido): Adiciona um pedido à lista.
+getPedidos(): Retorna a lista de pedidos.
+
+2. Classe Restaurante
+Atributos: 
+nome 
+tipoCulinaria.
+
+3. Classe Pedido
+Atributos: 
+restaurante: Representa o restaurante do pedido.
+valorTotal: O valor total do pedido.
+status: Um enum que representa o status do pedido.
+Métodos:
+atualizarStatus(): Atualiza o status do pedido na sequência: REALIZADO → PREPARANDO → A CAMINHO → ENTREGUE.
+exibirPedido(int numeroPedido): Exibe os detalhes do pedido.
+	
+4. Enum StatusPedido
+Define os possíveis estados do pedido: 
+REALIZADO
+PREPARANDO
+A_CAMINHO
+ENTREGUE.
+
+
+Funcionalidades do Programa
+
+O programa deve exibir um menu interativo permitindo que o usuário:
+Faça um novo pedido, informando o nome do restaurante, tipo de culinária e valor total.
+Liste todos os pedidos feitos, mostrando detalhes como restaurante, valor e status.
+Atualize o status de um pedido específico, avançando para o próximo estágio até a entrega.
+Saia do sistema.
