@@ -1,0 +1,157 @@
+MAIN-----------------------------------------------
+import entities.Prato;
+import entities.Restaurante;
+import entities.enums.TipoPrato;
+
+import javax.sound.midi.Soundbank;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println();
+        System.out.println("-- CADASTRO DE RESTAURANTE --");
+        System.out.println();
+
+        Prato prato1 = new Prato("Sorvete de creme", 15, TipoPrato.SOBREMESA);
+        Prato prato2 = new Prato("Sorvete de chocolate", 15, TipoPrato.SOBREMESA);
+        Prato prato3 = new Prato("Torta de Limão", 35,TipoPrato.PRINCIPAL);
+        Prato prato4 = new Prato("Strogonoff de carne",56.9,TipoPrato.PRINCIPAL);
+        Prato prato5 = new Prato("Salada Verde", 28.9,TipoPrato.ENTRADA);
+
+
+        Restaurante restaurante = new Restaurante("Sorveteria Criança Feliz", "Doces");
+        Restaurante restaurante2 = new Restaurante("Strogonofferia Lima","Almoços executivos");
+
+        restaurante.adicionarPrato(prato1);
+        restaurante.adicionarPrato(prato2);
+        restaurante.adicionarPrato(prato3);
+        restaurante2.adicionarPrato(prato4);
+        restaurante2.adicionarPrato(prato5);
+
+        System.out.println(restaurante.listarPratos());
+        System.out.println(restaurante2.listarPratos());
+
+
+
+        sc.close();
+    }
+}
+Main opcional -------------------------------------------------------------
+ System.out.println();
+        System.out.println("-- CADASTRO DE RESTAURANTE --");
+        System.out.println();
+
+        System.out.print("Digite o nome do restaurante: ");
+        String nomeRestaurante = sc.nextLine();
+
+        System.out.print("Digite o tipo de culinária: ");
+        String tipoCulinaria= sc.nextLine();
+
+        Restaurante restaurante = new Restaurante(nomeRestaurante, tipoCulinaria);
+
+        System.out.print("Informe o nome do prato: ");
+        String nomePrato = sc.nextLine();
+
+        System.out.print("Informe o preço do prato: R$");
+        double preco = sc.nextDouble();
+
+        System.out.println("Informe:\n 1 para Entrada\n 2 para Prato Principal e\n 3 para Sobremesa");
+        int tipo = sc.nextInt();
+
+        TipoPrato  tipoPrato;
+        if (tipo == 1){
+            tipoPrato=TipoPrato.ENTRADA;
+        } ....
+
+Restaurante ---------------------------------------------------------------
+package entities;
+
+import entities.enums.TipoPrato;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Restaurante {
+    private String nomeRestaurante;
+    private String tipoCulinaria;
+    private List<Prato> pratos;
+
+    public Restaurante(String nomeRestaurante, String tipoCulinaria) {
+        this.nomeRestaurante = nomeRestaurante;
+        this.tipoCulinaria = tipoCulinaria;
+        this.pratos = new ArrayList<>();
+    }
+
+    public String getNomeRestaurante() {
+        return nomeRestaurante;
+    }
+    public String getTipoCulinaria() {
+        return tipoCulinaria;
+    }
+
+    public List<Prato> getPratos() {
+        return pratos;
+    }
+
+    public void adicionarPrato (Prato prato){
+        this.pratos.add(prato);
+
+    }
+
+    public String listarPratos (){
+        StringBuilder sb = new StringBuilder();
+        sb.append(" ** ").append(nomeRestaurante).append(" **").append("\n");
+        //sb.append("Opções de Pratos: \n\n");
+        for (Prato prato : pratos) {
+            sb.append(prato.exibirPrato());
+        }
+        return sb.toString();
+    }
+}
+
+Prato --------------------------------------------
+package entities;
+
+import entities.enums.TipoPrato;
+
+public class Prato {
+    private String nomePrato;
+    private double preco;
+    private TipoPrato tipoPrato;
+
+    public Prato(String nomePrato, double preco, TipoPrato tipoPrato) {
+        this.nomePrato = nomePrato;
+        this.preco = preco;
+        this.tipoPrato = tipoPrato;
+    }
+
+    public String getNome() {
+        return nomePrato;
+    }
+
+    public double getPreco() {
+        return preco;
+    }
+
+    public TipoPrato getTipoPrato() {
+        return tipoPrato;
+    }
+
+    public String exibirPrato(){
+        StringBuilder sb = new StringBuilder();
+        sb.append("Tipo: ").append(tipoPrato).append(" - ").append("Prato: ").append(nomePrato).append(" - R$").append(preco).append("\n");
+        return sb.toString();
+    }
+
+
+}
+TipoPrato------------------------------------------------------
+package entities.enums;
+
+public enum TipoPrato {
+    ENTRADA, PRINCIPAL, SOBREMESA;
+
+}
+
