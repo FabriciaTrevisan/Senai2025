@@ -1,0 +1,118 @@
+Main-------------------------
+import entities.Contribuinte;
+import entities.PessoaFisica;
+import entities.PessoaJuridica;
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner sc  =new Scanner(System.in);
+
+        Contribuinte contribuinte = new PessoaFisica("Joao Silva", 50000.0, 2000.0);
+        Contribuinte contribuinte1 = new PessoaFisica("Maria Souza", 15000.0, 0.0);
+        Contribuinte contribuinte2 = new PessoaJuridica("Senai Soltions", 400000.0,25);
+
+        System.out.println(contribuinte2.getRendaAnual());
+
+
+
+        //System.out.println(contribuinte2.g);
+        //System.out.println(contribuinte.calcularImposto());
+        //System.out.println(contribuinte1.calcularImposto());
+        //System.out.println(contribuinte2.calcularImposto());
+
+
+
+
+
+
+        sc.close();
+    }
+}
+Contribuiinte--------------------------------
+package entities;
+
+public abstract class Contribuinte {
+    private String nome;
+    private Double rendaAnual; //protected também funciona ao invés de private, no método só não usa o super
+
+    public Contribuinte(String nome, Double rendaAnual) {
+        this.nome = nome;
+        this.rendaAnual = rendaAnual;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public Double getRendaAnual() {
+        return rendaAnual;
+    }
+
+    public abstract Double calcularImposto();
+}
+PessoaFisica---------------------------------------
+package entities;
+
+public final class PessoaFisica extends Contribuinte {
+
+    private Double saudeGasto;
+
+    public PessoaFisica(String nome, Double rendaAnual, Double saudeGasto) {
+        super(nome, rendaAnual);
+        this.saudeGasto = saudeGasto;
+    }
+
+    public Double getSaudeGasto() {
+        return saudeGasto;
+    }
+
+    @Override
+    public Double calcularImposto() {
+        double renda = super.getRendaAnual();
+        double imposto;
+
+        if (renda < 20000){
+            imposto = renda * 0.15;
+
+        }else {
+            imposto = renda * 0.25;
+        }
+        if (saudeGasto == 0){
+            return imposto;
+        } else {
+            return imposto - saudeGasto/2;
+        }
+    }
+}
+PessoaJuridica-----------------------------------------
+package entities;
+
+public final class PessoaJuridica extends Contribuinte {
+    private int qtdFuncionarios;
+
+    public PessoaJuridica(String nome, Double rendaAnual, int qtdFuncionarios) {
+        super(nome, rendaAnual);
+        this.qtdFuncionarios = qtdFuncionarios;
+    }
+
+    public int getQtdFuncionarios() {
+        return qtdFuncionarios;
+    }
+
+    @Override
+    public Double calcularImposto() {
+        double imposto=0;
+        if (qtdFuncionarios <= 10){
+            imposto *= 0.16;
+            System.out.println(imposto);
+            return imposto;
+        } else {
+            imposto = imposto * 0.14;
+            System.out.println(imposto);
+            return imposto;
+        }
+    }
+}
