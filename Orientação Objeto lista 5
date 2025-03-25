@@ -10,62 +10,60 @@ import java.util.Scanner;
 
 public class Main {
 
-
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         List<Contribuinte> contribuintes = new ArrayList<>();
 
-        System.out.println("Selecione a opção:;");
-        System.out.println("1 - informar PF");
-        System.out.println("2 - informar PJ");
-        System.out.println("3 - exibir dados de imposto");
-        System.out.println("4 - sair");
-        int opcao = sc.nextInt();
+        while (true) {
+            System.out.println("Digite sua opção:");
+            System.out.println("1 - informar PF");
+            System.out.println("2 - informar PJ");
+            System.out.println("3 - exibir dados de imposto");
+            System.out.println("4 - sair");
+            int opcao = sc.nextInt();
+            sc.nextLine();
+            switch (opcao) {
+                case 1:
+                    System.out.println("**Cadastrar PF**");
+                    System.out.print("Nome de PF: ");
+                    String nome = sc.nextLine();
+                    System.out.print("Renda: R$");
+                    double renda = sc.nextDouble();
+                    System.out.print("Gasto com saúde: R$");
+                    double saudeGasto = sc.nextDouble();
+                    contribuintes.add(new PessoaFisica(nome, renda, saudeGasto));
 
-        switch (opcao){
-           case 1:
-                System.out.println("**Cadastrar PF**");
-                System.out.print("Nome de PF: ");
-                String nome = sc.nextLine();
-                System.out.print("Renda: R$");
-                double renda = sc.nextDouble();
-                System.out.print("Gasto com saúde: R$");
-                double saudeGasto = sc.nextDouble();
-                contribuintes.add(new PessoaFisica(nome, renda, saudeGasto));
-                break;
-            case 2:
-                System.out.println("**Cadastrar PJ**");
-                System.out.print("Nome de PJ: ");
-                String nome = sc.nextLine();
-                System.out.print("Renda: R$");
-                double renda = sc.nextDouble();
-                System.out.print("Número de funcionários: ");
-                double saudeGasto = sc.nextDouble();
-                contribuintes.add(new PessoaJuridica(nome,));
-                break;
-            case 3:
-                System.out.println("exibir dados");
-                break;
-            case 4:
-                System.out.println("sair");
-                break;
-            default:
-                System.out.println("opção inválida");
+                    break;
+                case 2:
+                    System.out.println("**Cadastrar PJ**");
+                    System.out.print("Nome de PJ: ");
+                    String nomepj = sc.nextLine();
+                    System.out.print("Renda: R$");
+                    double rendapj = sc.nextDouble();
+                    System.out.print("Número de funcionários: ");
+                    int numFuncionario = sc.nextInt();
+                    contribuintes.add(new PessoaJuridica(nomepj, rendapj, numFuncionario));
+                    break;
+                case 3:
+                    double soma=0;
+                    System.out.println("**Imposto Pago**");
+                    for (Contribuinte contribuinte : contribuintes) {
+                        System.out.println(contribuinte.getNome() + " " + contribuinte.calcularImposto());
+                        soma += contribuinte.calcularImposto();
+                    }
+
+                    System.out.println("Soma Imposto: " + soma);
+
+                    break;
+                case 4:
+                    System.out.println("sair");
+                    return;
+                default:
+                    System.out.println("Escolha uma opção válida");
+
+
+            }
         }
-        
-
-        
-
-        contribuintes.add(new PessoaJuridica("Senai Solutions", 400000.0, 25));
-       
-        
-
-
-
-
-
-
-        sc.close();
     }
 }
 Contribuiinte--------------------------------
@@ -142,13 +140,14 @@ public final class PessoaJuridica extends Contribuinte {
     @Override
     public Double calcularImposto() {
         double imposto=0;
+        double renda = super.getRendaAnual();
+
         if (qtdFuncionarios <= 10){
-            imposto *= 0.16;
-            System.out.println(imposto);
+            imposto = renda * 0.16;
+
             return imposto;
         } else {
-            imposto = imposto * 0.14;
-            System.out.println(imposto);
+            imposto = renda * 0.14;
             return imposto;
         }
     }
