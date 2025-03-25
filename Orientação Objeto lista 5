@@ -3,25 +3,62 @@ import entities.Contribuinte;
 import entities.PessoaFisica;
 import entities.PessoaJuridica;
 
+import java.sql.SQLOutput;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
+
+
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        List<Contribuinte> contribuintes = new ArrayList<>();
 
-        Scanner sc  =new Scanner(System.in);
+        System.out.println("Selecione a opção:;");
+        System.out.println("1 - informar PF");
+        System.out.println("2 - informar PJ");
+        System.out.println("3 - exibir dados de imposto");
+        System.out.println("4 - sair");
+        int opcao = sc.nextInt();
 
-        Contribuinte contribuinte = new PessoaFisica("Joao Silva", 50000.0, 2000.0);
-        Contribuinte contribuinte1 = new PessoaFisica("Maria Souza", 15000.0, 0.0);
-        Contribuinte contribuinte2 = new PessoaJuridica("Senai Soltions", 400000.0,25);
+        switch (opcao){
+           case 1:
+                System.out.println("**Cadastrar PF**");
+                System.out.print("Nome de PF: ");
+                String nome = sc.nextLine();
+                System.out.print("Renda: R$");
+                double renda = sc.nextDouble();
+                System.out.print("Gasto com saúde: R$");
+                double saudeGasto = sc.nextDouble();
+                contribuintes.add(new PessoaFisica(nome, renda, saudeGasto));
+                break;
+            case 2:
+                System.out.println("**Cadastrar PJ**");
+                System.out.print("Nome de PJ: ");
+                String nome = sc.nextLine();
+                System.out.print("Renda: R$");
+                double renda = sc.nextDouble();
+                System.out.print("Número de funcionários: ");
+                double saudeGasto = sc.nextDouble();
+                contribuintes.add(new PessoaJuridica(nome,));
+                break;
+            case 3:
+                System.out.println("exibir dados");
+                break;
+            case 4:
+                System.out.println("sair");
+                break;
+            default:
+                System.out.println("opção inválida");
+        }
+        
 
-        System.out.println(contribuinte2.getRendaAnual());
+        
 
-
-
-        //System.out.println(contribuinte2.g);
-        //System.out.println(contribuinte.calcularImposto());
-        //System.out.println(contribuinte1.calcularImposto());
-        //System.out.println(contribuinte2.calcularImposto());
+        contribuintes.add(new PessoaJuridica("Senai Solutions", 400000.0, 25));
+       
+        
 
 
 
