@@ -48,20 +48,17 @@ public class Main {
                     double soma=0;
                     System.out.println("**Imposto Pago**");
                     for (Contribuinte contribuinte : contribuintes) {
-                        System.out.println(contribuinte.getNome() + " " + contribuinte.calcularImposto());
+                        System.out.println(contribuinte.getNome() + " : R$" + contribuinte.calcularImposto());
                         soma += contribuinte.calcularImposto();
                     }
 
-                    System.out.println("Soma Imposto: " + soma);
-
+                    System.out.println("Soma Imposto: " + String.format("%.2f", soma));
                     break;
                 case 4:
                     System.out.println("sair");
                     return;
                 default:
                     System.out.println("Escolha uma opção válida");
-
-
             }
         }
     }
