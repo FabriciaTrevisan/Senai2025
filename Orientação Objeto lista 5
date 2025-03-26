@@ -63,7 +63,7 @@ public class Main {
         }
     }
 }
-Contribuiinte--------------------------------
+Contribuinte--------------------------------
 package entities;
 
 public abstract class Contribuinte {
