@@ -1,0 +1,153 @@
+Main ------------------------------------
+import entinties.Caminhao;
+import entinties.Carro;
+import entinties.Moto;
+import entinties.Veiculo;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        List<Veiculo> veiculos = new ArrayList<>();
+
+        while (true) {
+            System.out.println("Escolha uma opção:");
+            System.out.println(" 1 - Cadastrar novo carro \n 2 - Cadastrar nova moto \n 3 - Cadastrar novo caminhão \n 4 - Exibir dados \n 5 - Sair");
+            int escolha = sc.nextInt();
+
+            switch (escolha) {
+                case 1:
+                    System.out.print("Modelo do carro: ");
+                    String modelo = sc.nextLine();
+                    sc.nextLine();
+                    System.out.print("Ano: ");
+                    int ano = sc.nextInt();
+                    System.out.print("Distância percorrida em Km:");
+                    double distanciaPercorrida = sc.nextDouble();
+                    veiculos.add(new Carro(modelo, ano, distanciaPercorrida));
+                    break;
+                case 2:
+                    System.out.print("Modelo da moto: ");
+                    String modeloM = sc.nextLine();
+                    sc.nextLine();
+                    System.out.print("Ano: ");
+                    int anoM = sc.nextInt();
+                    System.out.print("Distância percorrida em Km:");
+                    double distanciaPercorridaM = sc.nextDouble();
+                    veiculos.add(new Moto(modeloM, anoM, distanciaPercorridaM));
+                    break;
+                case 3:
+                    System.out.print("Modelo do caminhão: ");
+                    String modeloC = sc.nextLine();
+                    sc.nextLine();
+
+                    System.out.print("Ano: ");
+                    int anoC = sc.nextInt();
+
+                    System.out.print("Distância percorrida em Km:");
+                    double distanciaPercorridaC = sc.nextDouble();
+
+                    System.out.print("Toneladas da carga: ");
+                    int toneladasCarga = sc.nextInt();
+
+                    veiculos.add(new Caminhao(modeloC, anoC, distanciaPercorridaC, toneladasCarga));
+                    break;
+                case 4:
+                    System.out.println("**Dados dos veículos**");
+                    for (Veiculo veiculo: veiculos){
+
+                       
+                        System.out.println("Tipo" + veiculo.getModelo());
+                        System.out.println("Ano: " + veiculo.getAno());
+                        System.out.println("Distância percorrida:" + veiculo.getDistanciaPercorrida() + "km");
+                        System.out.println(veiculo.calcularConsumo());
+                        }
+                case 5:
+                    return;
+            }
+        }
+    }
+}
+vEICULO-----------------------------------
+package entinties;
+
+public abstract class Veiculo {
+
+    private String modelo;
+    private int ano;
+    private double distanciaPercorrida;
+
+    public Veiculo(String modelo, int ano, double distanciaPercorrida) {
+        this.modelo = modelo;
+        this.ano = ano;
+        this.distanciaPercorrida = distanciaPercorrida;
+    }
+
+    public String getModelo() {
+        return modelo;
+    }
+
+    public int getAno() {
+        return ano;
+    }
+
+    public double getDistanciaPercorrida() {
+        return distanciaPercorrida;
+    }
+
+    public abstract double calcularConsumo();
+}
+Carro----------------------------------------
+package entinties;
+
+public class Carro extends Veiculo {
+
+    public Carro(String modelo, int ano, double distanciaPercorrida) {
+        super(modelo, ano, distanciaPercorrida);
+    }
+
+    @Override
+    public double calcularConsumo() {
+        //double consumo = 0;
+        return  super.getDistanciaPercorrida()/15;
+    }
+}
+Moto ---------------------------------------------------
+package entinties;
+
+public class Moto extends Veiculo {
+
+    public Moto(String modelo, int ano, double distanciaPercorrida) {
+        super(modelo, ano, distanciaPercorrida);
+    }
+
+    @Override
+    public double calcularConsumo() {
+        return getDistanciaPercorrida()/30;
+    }
+}
+Caminhao----------------------------------------------
+package entinties;
+
+public class Caminhao extends Veiculo {
+
+   private int toneladas;
+
+    public Caminhao(String modelo, int ano, double distanciaPercorrida, int toneladas) {
+        super(modelo, ano, distanciaPercorrida);
+        this.toneladas = toneladas;
+    }
+
+    @Override
+    public double calcularConsumo() {
+        if (toneladas == 0){
+            return getDistanciaPercorrida()/8;
+        } else {
+            return getDistanciaPercorrida() / 8 - toneladas/2;
+        }
+    }
+}
