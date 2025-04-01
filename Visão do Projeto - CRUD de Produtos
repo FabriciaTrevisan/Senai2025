@@ -1,0 +1,163 @@
+ProdutosController -------------------------------------
+package com.senai.produtoapp.controller;
+
+import com.senai.produtoapp.model.Produtos;
+import com.senai.produtoapp.service.ProdutosService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping ("/api/produtos") //@RequestMapping colocar um parâmetro de requisição para qdo estamos trabalhando com produto
+public class ProdutosController {
+
+    @Autowired
+    private ProdutosService produtosService;
+
+    //GET - pegar informação - POST - passar informação
+    //PUT - editar algo
+    //DELETE - deleta algo
+
+    //POST é o create
+
+
+    //método salvar:
+    @PostMapping //na controller a gente não retorna objetos, retorna respostas.
+    public ResponseEntity <Produtos> salvar(@RequestBody Produtos produtos){
+        //RequestBody quer dizer q estou pasando para dentro do body o corpo da requisição.
+        // Quando eu coloco que é um produto dentro de Produtos ele vai esperar as caraterísticas do produto: Nome....
+        var criarProduto = produtosService.criarproduto(produtos);
+        //para VAR eu não preciso dizer qual é o tipo.
+
+        return ResponseEntity.status(HttpStatus.CREATED).body(criarProduto);
+    }
+}
+ProdutosModel---------------------------------------
+package com.senai.produtoapp.model;
+
+import jakarta.persistence.*;
+
+import java.math.BigDecimal;
+
+//para anotations não usa ; no final
+@Entity
+@Table(name = "tb_produtos")
+
+public class Produtos{
+    @Id
+    @GeneratedValue (strategy = GenerationType.IDENTITY) //estou dizendo que o BD é o responsável por criar os IDs.
+    private Long id;
+    private String nome;
+    private String descricao;
+    private BigDecimal preco;
+
+        //criado construtores
+    public Produtos(){}
+
+    public Produtos(String nome, String descricao, BigDecimal preco) {
+        this.nome = nome;
+        this.descricao = descricao;
+        this.preco = preco;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public BigDecimal getPreco() {
+        return preco;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
+    public void setPreco(BigDecimal preco) {
+        this.preco = preco;
+    }
+}
+ProdutosRepository---------------------------------------------------------
+package com.senai.produtoapp.repository;
+
+import com.senai.produtoapp.model.Produtos;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface ProdutosRepository extends JpaRepository <Produtos, Long>{}
+ProdutosService---------------------------------------------------------------
+package com.senai.produtoapp.service;
+
+import com.senai.produtoapp.model.Produtos;
+import com.senai.produtoapp.repository.ProdutosRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.Optional;
+
+@Service
+public class ProdutosService {
+
+    @Autowired
+    private ProdutosRepository produtosRepository;
+
+    //CRUD - create read update delete
+
+    //Create
+    public Produtos criarproduto(Produtos produto) {
+        //quer dizeer que quando criar no BD vai retornar o produto
+        return produtosRepository.save(produto);
+
+    }
+
+    //READ - buscar todos
+    public List<Produtos> buscarTodos() {
+        return produtosRepository.findAll();
+    }
+
+    //READ - por ID
+    public Optional<Produtos> buscarPorId(Long id) {
+        return produtosRepository.findById(id);
+
+    }
+
+    //Update -
+    public Produtos atualizarProduto(Long id, Produtos produto) {
+        var produtoAtualizado = produtosRepository.findById(id);
+
+        if(produtoAtualizado.isPresent()){
+            produtoAtualizado.get().setNome(produto.getNome());
+            produtoAtualizado.get().setDescricao(produto.getDescricao());
+            produtoAtualizado.get().setPreco(produto.getPreco());
+
+            return produtosRepository.save(produtoAtualizado.get());
+
+        }
+        throw new RuntimeException("Produto não localizado");
+    }
+    // DELETE - Deletar produto
+    public void deletarProduto(Long id) {
+        produtosRepository.deleteById(id);
+    }
+}
