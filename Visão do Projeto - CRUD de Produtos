@@ -47,14 +47,14 @@ public class ProdutosController {
         var result = produtosService.buscarPorId(id);
                                                     //se passar um id que não eciste vai dar erro, por isso usa IF
         if (result.isPresent()){
-            return ResponseEntity.status((HttpStatus.OK).body(result.get()));
+            return ResponseEntity.status(HttpStatus.OK).body(result.get());
         } else {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         }
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Produtos> atualizar(@PathVariable Long id, RequestBody Produtos produto) {
+    public ResponseEntity<Produtos> atualizar(@PathVariable Long id, @RequestBody Produtos produto) {
         var produtoExist = produtosService.buscarPorId(id);
         //fazer validação
         if (produtoExist.isPresent()) {
@@ -65,7 +65,7 @@ public class ProdutosController {
         }
     }
 
-        // DELETE - Deletar produto 
+        // DELETE - Deletar produto
 
         @DeleteMapping("/{id}")
         public ResponseEntity<Void> deletar (@PathVariable Long id) {
