@@ -73,6 +73,8 @@ public class ProdutosController {
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
 }
+
+
 ProdutosModel---------------------------------------
 package com.senai.produtoapp.model;
 
@@ -133,6 +135,8 @@ public class Produtos{
         this.preco = preco;
     }
 }
+
+
 ProdutosRepository---------------------------------------------------------
 package com.senai.produtoapp.repository;
 
@@ -142,6 +146,9 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ProdutosRepository extends JpaRepository <Produtos, Long>{}
+
+
+
 ProdutosService---------------------------------------------------------------
 package com.senai.produtoapp.service;
 
