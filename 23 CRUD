@@ -1,0 +1,90 @@
+MODEL ---------------------------------------------------------
+package com.senai.doisdeabril.model;
+
+import jakarta.persistence.*;
+
+import java.math.BigDecimal;
+
+//para anotations não usa ; no final
+@Entity
+@Table(name = "tb_usuario")
+
+public class Usuario {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY) //estou dizendo que o BD é o responsável por criar os IDs.
+    private Long id;
+    private String nome;
+    private String email;
+    private String senha;
+    private Boolean ativo;
+
+    //criado construtores
+    public Usuario() {
+    }
+
+    public Usuario(String nome, String email, String senha) {
+        this.nome = nome;
+        this.email = email;
+        this.senha = senha;
+        this.ativo = true;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public Boolean getAtivo() {
+        return ativo;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
+
+    public void setAtivo(Boolean ativo) {
+        this.ativo = ativo;
+    }
+}
+
+
+REPOSITORY--------------------------------------------------------------------------
+package com.senai.doisdeabril.repository;
+
+import com.senai.doisdeabril.model.Usuario;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import java.util.List;
+import java.util.Optional;
+
+@Repository
+public interface UsuarioRepository extends JpaRepository <Usuario, Long>{
+    List<Usuario> findAllByAtivoTrue();
+    Optional<Usuario> findByEmail(String email); //esse comando serve para identificar se o email já está cadastrado ou não.
+        }
+
+        
