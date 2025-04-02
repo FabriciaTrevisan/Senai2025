@@ -87,4 +87,60 @@ public interface UsuarioRepository extends JpaRepository <Usuario, Long>{
     Optional<Usuario> findByEmail(String email); //esse comando serve para identificar se o email já está cadastrado ou não.
         }
 
+SERVICE---------------------------------------------------------------------------------
+package com.senai.doisdeabril.service;
+
+import com.senai.doisdeabril.model.Usuario;
+import com.senai.doisdeabril.repository.UsuarioRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
+
+import java.util.List;
+import java.util.Optional;
+
+@Service
+public class ProdutosService {
+
+    @Autowired
+    private UsuarioRepository usuarioRepository;
+
+    //CRUD - create read update delete
+
+    //Create
+    public Usuario criarusuario(Usuario usuario) {
+        return usuarioRepository.save(usuario);
+    }
+
+    //READ - buscar todos
+    public List<Usuario> buscarTodos() {
+        return usuarioRepository.findAll();
+    }
+
+    //READ - por ID
+    public Optional<Usuario> buscarPorId(Long id) {  //retorna optional pq pode ou não ter usuário com o ID informado
+        return usuarioRepository.findById(id);
+    }
+
+    //Update -
+    public Usuario atualizarUsuario(Long id, Usuario usuario) {
+        var usuarioExists = usuarioRepository.findById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND)); 
         
+        usuarioExists.setNome(usuario.getNome());
+        usuarioExists.setEmail(usuario.getEmail());
+        usuarioExists.getSenha(usuario.getSenha());
+      
+        return usuarioRepository.save(usuarioExists);
+        }
+
+    
+    // DELETE - Deletar 
+    public void deletarUsuario(Long id) {
+    usuarioRepository.deleteById(id);
+    }
+
+}
+
+
+
