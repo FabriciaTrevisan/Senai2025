@@ -35,74 +35,156 @@ package com.senai.doisdeabril.model;
 
 import jakarta.persistence.*;
 
+public class Usuario {
+
+    package com.senai.doisdeabril.model;
+
+import jakarta.persistence.*;
+
 import java.math.BigDecimal;
 
-//para anotations não usa ; no final
-@Entity
-@Table(name = "tb_usuario")
+    //para anotations não usa ; no final
+    @Entity
+    @Table(name = "tb_usuario")
 
-public class Usuario {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY) //estou dizendo que o BD é o responsável por criar os IDs.
-    private Long id;
-    private String nome;
-    private String email;
-    private String senha;
-    private Boolean ativo;
+    public class Usuario {
+        @Id
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
+        private Long id;
+        private String nome;
+        private String email;
+        private String senha;
+        private Boolean ativo = true;
 
-    //criado construtores
-    public Usuario() {
-    }
+        //criado construtores
+        public Usuario() {
+        }
 
-    public Usuario(String nome, String email, String senha) {
-        this.nome = nome;
-        this.email = email;
-        this.senha = senha;
-        this.ativo = true;
-    }
+        public Usuario(String nome, String email, String senha) {
+            this.nome = nome;
+            this.email = email;
+            this.senha = senha;
+            this.ativo = true;
+        }
 
-    public Long getId() {
-        return id;
-    }
+        public Long getId() {
+            return id;
+        }
 
-    public String getNome() {
-        return nome;
-    }
+        public String getNome() {
+            return nome;
+        }
 
-    public String getEmail() {
-        return email;
-    }
+        public String getEmail() {
+            return email;
+        }
 
-    public String getSenha() {
-        return senha;
-    }
+        public String getSenha() {
+            return senha;
+        }
 
-    public Boolean getAtivo() {
-        return ativo;
-    }
+        public Boolean getAtivo() {
+            return ativo;
+        }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+        public void setId(Long id) {
+            this.id = id;
+        }
 
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
+        public void setNome(String nome) {
+            this.nome = nome;
+        }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
+        public void setEmail(String email) {
+            this.email = email;
+        }
 
-    public void setSenha(String senha) {
-        this.senha = senha;
-    }
+        public void setSenha(String senha) {
+            this.senha = senha;
+        }
 
-    public void setAtivo(Boolean ativo) {
-        this.ativo = ativo;
+        public void setAtivo(Boolean ativo) {
+            this.ativo = ativo;
+        }
     }
 }
+package com.senai.doisdeabril.model;
 
+import jakarta.persistence.*;
 
+public class Usuario {
+
+    package com.senai.doisdeabril.model;
+
+import jakarta.persistence.*;
+
+import java.math.BigDecimal;
+
+    //para anotations não usa ; no final
+    @Entity
+    @Table(name = "tb_usuario")
+
+    public class Usuario {
+        @Id
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
+        private Long id;
+        private String nome;
+        private String email;
+        private String senha;
+        private Boolean ativo = true;
+
+        //criado construtores
+        public Usuario() {
+        }
+
+        public Usuario(String nome, String email, String senha) {
+            this.nome = nome;
+            this.email = email;
+            this.senha = senha;
+            this.ativo = true;
+        }
+
+        public Long getId() {
+            return id;
+        }
+
+        public String getNome() {
+            return nome;
+        }
+
+        public String getEmail() {
+            return email;
+        }
+
+        public String getSenha() {
+            return senha;
+        }
+
+        public Boolean getAtivo() {
+            return ativo;
+        }
+
+        public void setId(Long id) {
+            this.id = id;
+        }
+
+        public void setNome(String nome) {
+            this.nome = nome;
+        }
+
+        public void setEmail(String email) {
+            this.email = email;
+        }
+
+        public void setSenha(String senha) {
+            this.senha = senha;
+        }
+
+        public void setAtivo(Boolean ativo) {
+            this.ativo = ativo;
+        }
+    }
+}
 REPOSITORY--------------------------------------------------------------------------
 package com.senai.doisdeabril.repository;
 
@@ -117,9 +199,10 @@ import java.util.Optional;
 public interface UsuarioRepository extends JpaRepository <Usuario, Long>{
     List<Usuario> findAllByAtivoTrue();
     Optional<Usuario> findByEmail(String email); //esse comando serve para identificar se o email já está cadastrado ou não.
-        }
-
+}
+}
 SERVICE---------------------------------------------------------------------------------
+
 package com.senai.doisdeabril.service;
 
 import com.senai.doisdeabril.model.Usuario;
@@ -132,101 +215,98 @@ import org.springframework.web.server.ResponseStatusException;
 import java.util.List;
 import java.util.Optional;
 
-@Service
-public class ProdutosService {
+    @Service
+    public class UsuarioService {
 
-    @Autowired
-    private UsuarioRepository usuarioRepository;
+        @Autowired
+        private UsuarioRepository usuarioRepository;
 
-    //CRUD - create read update delete
-
-    //Create
-    public Usuario criarusuario(Usuario usuario) {
-        return usuarioRepository.save(usuario);
-    }
-
-    //READ - buscar todos
-    public List<Usuario> buscarTodos() {
-        return usuarioRepository.findAll();
-    }
-
-    //READ - por ID
-    public Optional<Usuario> buscarPorId(Long id) {  //retorna optional pq pode ou não ter usuário com o ID informado
-        return usuarioRepository.findById(id);
-    }
-
-    //Update -
-    public Usuario atualizarUsuario(Long id, Usuario usuario) {
-        var usuarioExists = usuarioRepository.findById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND)); 
-        
-        usuarioExists.setNome(usuario.getNome());
-        usuarioExists.setEmail(usuario.getEmail());
-        usuarioExists.getSenha(usuario.getSenha());
-      
-        return usuarioRepository.save(usuarioExists);
+        //CRUD - create read update delete
+        //Create
+        public Usuario criarUsuario(Usuario usuario) {
+            return usuarioRepository.save(usuario);
         }
 
-    
-    // DELETE - Deletar 
-    public void deletarUsuario(Long id) {
-    usuarioRepository.deleteById(id);
-    }
+        //READ - buscar todos
+        public List<Usuario> buscarTodos() {
+            return usuarioRepository.findAll();
+        }
 
+        //READ - por ID
+        public Optional<Usuario> buscarPorId(Long id) {  //retorna optional pq pode ou não ter usuário com o ID informado
+            return usuarioRepository.findById(id);
+        }
+
+        //Update -
+        public Usuario atualizarUsuario(Long id, Usuario usuario) {
+            var usuarioExists = usuarioRepository.findById(id).orElseThrow(() -> new ResponseStatusException((HttpStatus.NOT_FOUND)));
+
+            usuarioExists.setNome(usuario.getNome());
+            usuarioExists.setEmail(usuario.getEmail());
+            usuarioExists.getSenha(usuario.getSenha());
+
+            return usuarioRepository.save(usuarioExists);
+        }
+
+
+        // DELETE - Deletar
+        public void deletarUsuario(Long id) {
+            usuarioRepository.deleteById(id);
+        }
+
+    }
 }
+
 CONTROLLER ---------------------------------------------------------------------------------------------------------
 package com.senai.doisdeabril.controller;
 
 import com.senai.doisdeabril.model.Usuario;
-import com.senai.doisdeabril.repository.UsuarioRepository;
-
+import com.senai.doisdeabril.service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
-@RequestMapping ("/api/usuarios")
-public class UsuarioController {
+    @RequestMapping ("/api/usuarios")
+    public class UsuarioController {
 
-    @Autowired
-    private UsuarioService usuarioService;
+        @Autowired
+        private UsuarioService usuarioService;
 
 
-    //GET - PUT - DELETE - POST é o create
+        //GET - PUT - DELETE - POST é o create
 
-    @PostMapping
-    public ResponseEntity criarUsuario(@RequestBody Usuario usuario){
-        var result = usuarioService.criarUsuario(usuario);
-                return ResponseEntity.status(HttpStatus.CREATED).body(usuario);
-    }
-
-    @GetMapping
-    public ResponseEntity<List<Usuario>>listarUsuario(){
-        var listaDeUsuarios = usuarioService.listarTodosUsuarios();
-        return ResponseEntity.status(HttpStatus.OK).body(listaDeUsuarios);
-    }
-
-    @GetMapping("/{id}")
-    public ResponseEntity<Usuario> buscarUsuariorPorId(@PathVariable Long id){
-        var usuario = usuarioService.listarUsuarioPorId(id);
-        return ResponseEntity.status((HttpStatus.OK)).body(usuario);
+        @PostMapping
+        public ResponseEntity criarUsuario(@RequestBody Usuario usuario){
+            var result = usuarioService.criarUsuario(usuario);
+            return ResponseEntity.status(HttpStatus.CREATED).body(usuario);
         }
 
-    @PutMapping("/{id}")
+        @GetMapping
+        public ResponseEntity<List<Usuario>>listarUsuario(){
+            var listaDeUsuarios = usuarioService.buscarTodos();
+            return ResponseEntity.status(HttpStatus.OK).body(listaDeUsuarios);
+        }
+
+        @GetMapping("/{id}")
+        public ResponseEntity<Optional<Usuario>> buscarUsuariorPorId(@PathVariable Long id){
+            var usuario = usuarioService.buscarPorId(id);
+            return ResponseEntity.status((HttpStatus.OK)).body(usuario);
+        }
+
+        @PutMapping("/{id}")
         public ResponseEntity<Usuario> atualizarUsuario(@PathVariable Long id, @RequestBody Usuario usuario){
-        var usuarioAtualizado = usuarioService.atualizarUsuario(id, usuario;
-        return ResponseEntity.status((HttpStatus.OK)).body(usuarioAtualizado);
-    }
-
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Usuario>deletarUsuario(@PathVariable Long id){
-        var usuarioDeletado = usuarioService.deletarUsuario(id);
-        return ResponseEntity.status(HttpStatus.OK).body(usuarioDeletado);
+            var usuarioAtualizado = usuarioService.atualizarUsuario(id, usuario);
+            return ResponseEntity.status((HttpStatus.OK)).body(usuarioAtualizado);
         }
-}
 
-
-
-
+        @DeleteMapping("/{id}")
+        public ResponseEntity deletarUsuario(@PathVariable Long id){
+            var usuarioDeletado = usuarioService.deletarUsuario(id);
+            return ResponseEntity.status(HttpStatus.OK).body(usuarioDeletado);
+        }
+    }
