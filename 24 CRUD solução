@@ -1,3 +1,35 @@
+resources/aplications.property-------------------------------------------------------------------------------------------------
+spring.application.name=doisdeabril
+# Dados de conexão com o banco H2
+
+spring.datasource.driverClassName=org.h2.Driver 
+
+spring.datasource.url=jdbc:h2:mem:memdb 
+
+spring.datasource.username=sa 
+
+spring.datasource.password=
+
+
+
+# H2 Client
+
+spring.h2.console.enabled=true 
+
+spring.h2.console.path=/h2-console 
+
+
+
+# JPA, SQL
+
+spring.jpa.database-platform=org.hibernate.dialect.H2Dialect 
+
+spring.jpa.defer-datasource-initialization=true 
+
+spring.jpa.show-sql=true 
+
+spring.jpa.properties.hibernate.format_sql=true 
+
 MODEL ---------------------------------------------------------
 package com.senai.doisdeabril.model;
 
@@ -141,6 +173,60 @@ public class ProdutosService {
     }
 
 }
+CONTROLLER ---------------------------------------------------------------------------------------------------------
+package com.senai.doisdeabril.controller;
+
+import com.senai.doisdeabril.model.Usuario;
+import com.senai.doisdeabril.repository.UsuarioRepository;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping ("/api/usuarios")
+public class UsuarioController {
+
+    @Autowired
+    private UsuarioService usuarioService;
+
+
+    //GET - PUT - DELETE - POST é o create
+
+    @PostMapping
+    public ResponseEntity criarUsuario(@RequestBody Usuario usuario){
+        var result = usuarioService.criarUsuario(usuario);
+                return ResponseEntity.status(HttpStatus.CREATED).body(usuario);
+    }
+
+    @GetMapping
+    public ResponseEntity<List<Usuario>>listarUsuario(){
+        var listaDeUsuarios = usuarioService.listarTodosUsuarios();
+        return ResponseEntity.status(HttpStatus.OK).body(listaDeUsuarios);
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Usuario> buscarUsuariorPorId(@PathVariable Long id){
+        var usuario = usuarioService.listarUsuarioPorId(id);
+        return ResponseEntity.status((HttpStatus.OK)).body(usuario);
+        }
+
+    @PutMapping("/{id}")
+        public ResponseEntity<Usuario> atualizarUsuario(@PathVariable Long id, @RequestBody Usuario usuario){
+        var usuarioAtualizado = usuarioService.atualizarUsuario(id, usuario;
+        return ResponseEntity.status((HttpStatus.OK)).body(usuarioAtualizado);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Usuario>deletarUsuario(@PathVariable Long id){
+        var usuarioDeletado = usuarioService.deletarUsuario(id);
+        return ResponseEntity.status(HttpStatus.OK).body(usuarioDeletado);
+        }
+}
+
 
 
 
