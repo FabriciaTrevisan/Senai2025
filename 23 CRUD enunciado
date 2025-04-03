@@ -1,0 +1,26 @@
+Visão do Projeto
+
+Você deverá realizar um CRUD de usuários (conforme os exemplos do professor). A entidade usuario (classe) deverá possuir os atributos listados abaixo:
+id: Long (será a chave primária dessa entidade)
+nome : String
+email : String
+senha : String
+ativo : Boolean
+Obs: coloque o nome da tabela de tb_produtos
+
+O projeto terá as dependências: Spring Web, JPA, H2, e Dev Tools.
+
+Siga as boas práticas que foram passadas e não se esqueça de configurar o application.properties.
+
+Ao final do desenvolvimento, o programa deverá permitir a inserção, remoção, atualização e a listagem de usuários.
+
+Para ajudar a popular o banco, crie um arquivo import.sql na pasta src/main/resources e insira os dados abaixo:
+-- INSERINDO USUARIOS
+INSERT INTO tb_usuarios (nome, email, senha, ativo) VALUES ('Joao Silva', 'joao@email.com', 'joao123', true);
+INSERT INTO tb_usuarios (nome, email, senha, ativo) VALUES ('Maria Souza', 'maria@email.com', 'maria123', true);
+INSERT INTO tb_usuarios (nome, email, senha, ativo) VALUES ('Carlos Silva', 'carlos@email.com', 'carlos123', false);
+INSERT INTO tb_usuarios (nome, email, senha, ativo) VALUES ('Jose Inacio', 'jose@email.com', 'jose123', true);
+INSERT INTO tb_usuarios (nome, email, senha, ativo) VALUES ('Paula Silva', 'paula@email.com', 'paula123', true);
+
+
+
