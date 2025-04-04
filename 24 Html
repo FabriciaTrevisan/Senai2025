@@ -1,0 +1,198 @@
+EXERCÍCIO 1----------------------------------------------------------------------------------------
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meu title</title>
+  </head>
+  <body>
+    <h1>Fabricia Trevisan</h1>
+    <p>Sou eu!</p>
+  </body>
+</html>
+EXERCÍCIO 2 ----------------------------------------------------------------------------------------
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meu title</title>
+  </head>
+  <body>
+    <h1>INOVAR PARA QUÊ?</h1>
+    <h2>Descubra como a inovação pode ajudar sua empresa a crescer.</h2>
+    <h3>Entenda como criar uma cultura de inovação na sua empresa.</h3>
+
+    <p>Parágrafo 1 com texto bem legal.</p>
+    <p>Parágrafo 2 continuando o texto super empolgante.</p>
+    <p>Parágrafo 3 encerrando o assunto.</p>
+  </body>
+</html>
+EXERCÍCIO 3 ---------------------------------------------------------------------------------------
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meu title</title>
+  </head>
+  <body>
+    <img src="/doguinho.jpg" alt="Cãozinho branco coçando o focinho" />
+    <br />
+    <a href="http://www.google.com" target="_blank">Google</a>
+  </body>
+</html>
+EXERCÍCIO 4 ------------------------------------------------------------------------------------------
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meu title</title>
+  </head>
+  <body>
+    Listas Ordenadas e não Ordenadas
+    <br /><br />
+
+    <ul>
+      <strong>Lista de compras</strong>
+      <li>Bife</li>
+      <li>Linguiça</li>
+      <li>Carvão</li>
+      <li>Tomate</li>
+      <li>Cebola</li>
+    </ul>
+
+    <ol>
+      <strong>Receita Bolo de Fubá</strong>
+      <li>Em um liquidificador, bata os ovos com o açúcar e o óleo.</li>
+      <li>
+        Transfira essa mistura para um recipiente e adicione o fubá e a farinha
+        de trigo. Misture bem até obter uma massa homogênea.
+      </li>
+      <li>Adicione o fermento e misture bem.</li>
+      <li>
+        Transfira a massa para uma forma de furo no meio, untada e enfarinhada,
+        e leve para assar em forno pré-aquecido 180º C por cerca de 40 minutos.
+      </li>
+      <li>
+        Quando estiver assado, retire do forno, espere esfriar e desenforme.
+        Sirva.
+      </li>
+    </ol>
+  </body>
+</html>
+EXERCÍCIO 5 -------------------------------------------------------------------------------------------------------
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meu title</title>
+  </head>
+  <body>
+    <header>
+        <h1>Escola Brasileira de Nada!</h1>
+        <nav>
+            <a href="#">Matrícula</a> 
+            <a href="#">Material</a>
+            <a href="#">Calendários</a>
+        </nav>
+    </header>
+    <main>
+        <article>
+            <h2>O que é a escola de nada?</h2>
+            <p>A Escola Brasileira de nada não te ensina nada, aqui você só fica à toa.</p>
+            <p>Participe e seja feliz.</p>
+
+            <aside>
+                <strong>Aside:</strong> <br>
+                <a href="#">No trabalho</a> <br>
+                <a href="#">Na escola</a> <br>
+                <a href="#">Em casa</a> <br>
+            </aside>
+        </article>
+    </main>
+    <br><br>
+    <footer>
+        @Direitos reservados. Entre em contato por escoladenada@email.com.
+    </footer>
+    
+    </ol>
+  </body>
+</html>
+EXERCÍCIO 6 ------------------------------------------------------------------------------------------------------------
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meu title</title>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <th>Segunda</th>
+        <th>Quarta</th>
+        <th>Sexta</th>
+      </tr>
+      <tr>
+        <td>Matemática</td>
+        <td>Portugues</td>
+        <td>Inglês</td>
+      </tr>
+      <tr>
+        <td>História</td>
+        <td>Matemática</td>
+        <td>Geografia</td>
+      </tr>
+      <tr>
+        <td>Português</td>
+        <td>Matemática</td>
+        <td>História</td>
+      </tr>
+      <tr>
+        <td>Matemática</td>
+        <td>Inglês</td>
+        <td>Geografia</td>
+      </tr>
+    </table>
+  </body>
+</html>
+EXERCÍCIO 7 ----------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
