@@ -212,7 +212,7 @@ EXERCÍCIO 8 -------------------------------------------------------------------
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Filhotes Fofos</title>
-    <!-- <link rel="stylesheet" href="style.css" /> -->
+    
   </head>
   <body>
     <header>
@@ -223,7 +223,7 @@ EXERCÍCIO 8 -------------------------------------------------------------------
           href="https://www.google.com/search?q=google+cachorros&oq=google+cachor&gs_lcrp=EgZjaHJvbWUqDQgAEAAYiwMYgAQY-AUyDQgAEAAYiwMYgAQY-AUyBggBEEUYOTIHCAIQABiABDIHCAMQABiABDIHCAQQABiABDIHCAUQABiABDIHCAYQABiABDIHCAcQABiABDIHCAgQABiABDIHCAkQABiABNIBCDc2MzJqMWo3qAIAsAIA&sourceid=chrome&ie=UTF-8"
           target="_blank"
         >
-          <img src="dog1.jpg" alt="" width="200" />
+          <img src="dog1.jpg" alt="filhote de cachorro branco e marrom sentado em piso cinza" width="200" />
         </a>
 
         <li>Gatinhos fofos</li>
@@ -231,7 +231,7 @@ EXERCÍCIO 8 -------------------------------------------------------------------
           href="https://www.google.com/search?q=google+gatos&sca_esv=6a81f2bd04fd845e&sxsrf=AHTn8zrDn1qaQTOBnB9WlDTn4CZlRYyz0g%3A1744075674178&ei=mnv0Z47GCtLb1sQPif3aeQ&ved=0ahUKEwiO-5SYpMeMAxXSrZUCHYm-Ng8Q4dUDCBA&uact=5&oq=google+gatos&gs_lp=Egxnd3Mtd2l6LXNlcnAaAhgDIgxnb29nbGUgZ2F0b3MyChAAGIAEGLEDGAoyChAAGIAEGLEDGAoyChAAGIAEGLEDGAoyChAAGIAEGLEDGAoyChAAGIAEGLEDGAoyChAAGIAEGLEDGAoyChAAGIAEGAoYiwMyDRAAGIAEGLEDGAoYiwMyChAAGIAEGAoYiwMyChAAGIAEGAoYiwNIpQ5Q_AVYxQpwAngBkAEAmAGEAaAB9QSqAQMwLjW4AQPIAQD4AQGYAgegApAFwgIKEAAYsAMY1gQYR8ICDRAuGIAEGLADGEMYigXCAggQABiABBixA8ICCxAAGIAEGLEDGIMBwgIFEAAYgATCAgoQABiABBgUGIcCwgIHEAAYgAQYCsICDhAAGIAEGLEDGIMBGIsDmAMAiAYBkAYJkgcDMi41oAe6HbIHAzAuNbgHiAU&sclient=gws-wiz-serp"
           target="_blank"
         >
-          <img src="cat1.jpg" alt="" width="200" />
+          <img src="cat1.jpg" alt="filhote de gato todo branco com as patas da frente apoiadas em uma corda" width="200" />
         </a>
 
         <li>Cobras assustadoramente dóceis</li>
@@ -239,42 +239,131 @@ EXERCÍCIO 8 -------------------------------------------------------------------
           href="https://www.google.com/search?q=google+cobras+d%C3%B3ceis&sca_esv=6a81f2bd04fd845e&sxsrf=AHTn8zpIYnTY6R_dMYHjb-_UNN7Je-XZUw%3A1744075734145&ei=1nv0Z-LNCMbb1sQP0sPksAQ&ved=0ahUKEwjikOG0pMeMAxXGrZUCHdIhGUYQ4dUDCBA&uact=5&oq=google+cobras+d%C3%B3ceis&gs_lp=Egxnd3Mtd2l6LXNlcnAaAhgCIhVnb29nbGUgY29icmFzIGTDs2NlaXMyBRAhGKABMgUQIRigAUjsIVDDCljsHnADeAGQAQCYAYsBoAHsDKoBBDAuMTO4AQPIAQD4AQGYAhCgAqwNwgIKEAAYsAMY1gQYR8ICDRAuGIAEGLADGEMYigXCAgoQIxiABBgnGIoFwgILEAAYgAQYsQMYgwHCAggQABiABBixA8ICDhAAGIAEGLEDGIMBGIsDwgILEAAYgAQYsQMYiwPCAgUQABiABMICCBAAGIAEGIsDwgIGEAAYFhgemAMAiAYBkAYJkgcEMy4xM6AHmj-yBwQwLjEzuAegDQ&sclient=gws-wiz-serp"
           target="_blank"
         >
-          <img src="snake1.jpg" alt="" width="200" />
+          <img src="snake1.jpg" alt="pequena cobra marrom enrolada em cima de uma margarida branca" width="200" />
         </a>
 
         <li>Exóticos apaixonantes</li>
-        <img src="/pig1.jpg" alt="" width="200" />
-      </ul>
-
-      <a href="https://www.google.com.br" target="_blank">
-        <img
-          src="pig1.jpg"
-          alt="Foto de um filhote de porco fofinho."
-          width="300"
-          height="200"
-        />
-      </a>
+        <a href="https://www.google.com/search?q=google+porcos+pet&sca_esv=6a81f2bd04fd845e&sxsrf=AHTn8zrmucJoxQgz36JdexpuayqPdZQ40Q%3A1744151033784&ei=-aH1Z7LOL5bC5OUPgpqhiAU&ved=0ahUKEwjyrrb2vMmMAxUWIbkGHQJNCFEQ4dUDCBA&uact=5&oq=google+porcos+pet&gs_lp=Egxnd3Mtd2l6LXNlcnAaAhgCIhFnb29nbGUgcG9yY29zIHBldDIFECEYoAEyBRAhGKABMgUQIRigAUi0LlAAWIYqcAN4AZABAJgBqQGgAc8PqgEEMC4xNbgBA8gBAPgBAZgCEqACgRHCAgoQIxiABBgnGIoFwgIQEAAYgAQYsQMYgwEYFBiHAsICCBAAGIAEGLEDwgILEAAYgAQYsQMYgwHCAgUQABiABMICDhAAGIAEGLEDGIMBGIsDwgIHEAAYgAQYCsICCBAAGIAEGIsDwgILEAAYgAQY-AUYiwPCAg0QABiABBixAxiDARgKwgINEAAYgAQYFBiHAhiLA8ICChAAGIAEGAoYiwPCAgQQIxgnwgINEAAYgAQYsQMYFBiHAsICBBAAGAPCAgsQABiABBixAxiLA8ICBxAAGAMYiwPCAgYQABgWGB7CAggQABiABBiiBMICBRAhGJ8FmAMAkgcEMy4xNaAHskuyBwQwLjE1uAfkEA&sclient=gws-wiz-serp" 
+        target="_blank">
+            <img src="pig1.jpg" alt="filhotinho de porco com pelos arrepiados sobre a cabeça sentado na areia." width="200" />
+        </a>
+        </ul>
+        <img src="" alt="">
+        </a>
     </header>
+
+    <main>
+
+        <h3>Leve um de nossos filhotes para casa.</h3>
+        <img src="dog2.jpg" alt="filhote de cachorro peludo, de corpo brando e cabeça marrom" width="200">
+        <h4>R$500,00</h4>
+        <button type="submit">Comprar cãozinho</button>
+        <br><br>
+        
+        <img src="cat2.jpg" alt="filhote de gato com parte da frente do corpo branca e parte traseira cinza claro, em pé em cima da mesa." width="200">
+        <h4>300,00</h4>
+        <button type="submit">Comprar gatinho</button> <br><br>
+
+        <img src="pig2.jpg" alt="filhote de porco em gramado,  curioso olhando pra cima e cheirando o ar." width="200">
+        <h4>200,00</h4>
+        <button type="submit">Comprar porquinho</button> <br><br>
+
+        <img src="sneke2.jpg" alt="pequena cobra com listas amarelada e marrons no cumprimento do corpo, sobre piso de madeira com cabeça erguida." width="200">
+        <h4>800,00</h4>
+        <button type="submit">Comprar cobra</button> <br><br>
+
+    </main>
+
+    <aside>
+        <h2>Rações e acessórios</h2>
+        <a href="https://www.google.com/search?q=ra%C3%A7%C3%B5es+para+c%C3%A3es&oq=ra%C3%A7%C3%B5es+para+c%C3%A3es&gs_lcrp=EgZjaHJvbWUyCQgAEEUYORiABDIHCAEQABiABDIHCAIQABiABDIHCAMQABiABDIHCAQQABiABDIHCAUQABiABDIHCAYQABiABDIHCAcQABiABDIGCAgQABgeMgYICRAAGB7SAQg3MzY5ajFqN6gCALACAA&sourceid=chrome&ie=UTF-8" target="_blank">Cães</a>
+        <a href="https://www.google.com/search?q=ra%C3%A7%C3%B5es+para+gatos&sca_esv=540de929b15f835b&sxsrf=AHTn8zqCNi-44tGB3zxb2yQYXgQsVcKNpA%3A1744152287390&ei=36b1Z9jGF6jY1sQP2u2K8QE&ved=0ahUKEwiYspjMwcmMAxUorJUCHdq2Ih4Q4dUDCBA&uact=5&oq=ra%C3%A7%C3%B5es+para+gatos&gs_lp=Egxnd3Mtd2l6LXNlcnAaAhgCIhNyYcOnw7VlcyBwYXJhIGdhdG9zMgUQLhiABDIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABEj9DFDYBliyC3ACeAGQAQCYAaEBoAGTBaoBAzAuNbgBA8gBAPgBAZgCB6AC5wXCAgoQABiwAxjWBBhHwgINEAAYgAQYsAMYQxiKBcICCBAAGIAEGIsDmAMAiAYBkAYJkgcDMi41oAfxQLIHAzAuNbgH3AU&sclient=gws-wiz-serp" target="_blank">Gatos</a>
+        <a href="https://www.google.com/search?q=ra%C3%A7%C3%B5es+para+porcos&sca_esv=540de929b15f835b&sxsrf=AHTn8zo8MkGsDmqwjN-VfOK8a7t-CZ9Vkw%3A1744152344431&ei=GKf1Z4KFGr3U1sQP8J-Q8Qs&ved=0ahUKEwiC8bHnwcmMAxU9qpUCHfAPJL4Q4dUDCBA&uact=5&oq=ra%C3%A7%C3%B5es+para+porcos&gs_lp=Egxnd3Mtd2l6LXNlcnAaAhgCIhRyYcOnw7VlcyBwYXJhIHBvcmNvczIFEAAYgAQyBRAAGO8FMggQABiABBiiBDIIEAAYgAQYogRIxQ9Q1wZYxgtwAngBkAEAmAGNAaABlgaqAQMwLja4AQPIAQD4AQGYAgigAtwGwgIKEAAYsAMY1gQYR8ICDRAAGIAEGLADGEMYigXCAgsQABiABBj4BRiLA8ICDRAAGIAEGBQYhwIYiwPCAgYQABgWGB6YAwCIBgGQBgqSBwMyLjagB9IcsgcDMC42uAfSBg&sclient=gws-wiz-serp" target="_blank">Porcos</a>
+        <a href="https://trexpets.com.br/camundongo-alimento-congelado-para-cobras" target="_blank">Cobras</a>
+        <br>
+    </aside>
+
+    <footer>
+        <br>
+        Contatos
+        43-999998888
+        @filhetes_fotos
+    </footer>
   </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+EXERCÍCIO 10-----------------------------------------------------------------------------------------------------------------
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CURRÍCULO</title>
+  </head>
+  <body>
+    <header>
+      <h1>Fabricia Trevisan</h1>
+    </header>
+    <main>
+      <div>
+        <h2>Contatos</h2>
+        <p>43-99999.8888</p>
+        <p>fabricia@email.com</p>
+      </div>
+      <div>
+        <h2>Formação</h2>
+        <ul>
+          <li>Gradução em Física pela Universidade Estadual de Londrina.</li>
+          <li>Pós Graduação em Gestão de Pessoas e RH pela Unifil</li>
+          <li>Pós Graduação em Liderança e Gestão de Pessoas pela Conquer</li>
+        </ul>
+      </div>
+      <div>
+        <h2>Habilidades técnicas</h2>
+        <ul>
+          <li>Conhecimento em programação Java;</li>
+          <li>Inglês intermediário;</li>
+          <li>Conhecimento de metodologias ágeis;</li>
+          <li>Experiêcia em gestão de pessoas e liderança de equiques;</li>
+        </ul>
+      </div>
+      <section>
+        <h2>Experiênicas Profissionais</h2>
+        <ul>
+          <li><strong>Empresa 1</strong></li>
+          <ul>
+            <li>2 anos de experiência em liderança de equipe de produção.</li>
+          </ul>
+          <li><strong>Empresa 2</strong></li>
+          <ul>
+            <li>
+              3 anos de experiência em gestão de equipe de serviços de campo em
+              rede elétrica, com atendimento emergicial e comercial.
+            </li>
+          </ul>
+          <li><strong>Empresa 3</strong></li>
+          <ul>
+            <li>
+              15 anos de experiênica em supervisão de equipe de cobrança em
+              massa, com rotinas de protestos, negativações, emails e demais
+              correspondências físicas e digitais.
+            </li>
+          </ul>
+        </ul>
+      </section>
+      <div>
+        <h2>Redes Sociais</h2>
+        <a href="https://br.linkedin.com" target="_blank">LinkedIn</a>
+        <a
+          href="https://github.com/FabriciaTrevisan/Senai2025/edit/main/25%20Html"
+          target="_blank"
+          >GitHub</a
+        >
+      </div>
+    </main>
+  </body>
+</html>
+EXERCÍCIO 
 
 
 
