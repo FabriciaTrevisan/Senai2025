@@ -161,6 +161,102 @@ EXERCÍCIO 6 -------------------------------------------------------------------
   </body>
 </html>
 EXERCÍCIO 7 ----------------------------------------------------------------------------------------------
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="style.css" /> -->
+  </head>
+  <body>
+    <h2>Formulário sobre literatura preferida</h2>
+    <form action="">
+      <div>
+        <label for="nome">Nome</label>
+        <input type="text" name="nome" id="nome"><br>
+      </div>
+      
+      <div>
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email"><br>
+      </div>
+
+      <div>
+        Temas de interesse:
+       <label>
+        <input type="checkbox" name="opcao1" value="tecnico">Técnico
+       </label>
+       <label>
+        <input type="checkbox" name="opcao2" value="romance">Romance
+       </label>
+       <label>
+        <input type="checkbox" name="opcao3" value="aventura">Aventura
+       </label>
+      </div>
+
+      <div>
+        Informações Complementares: <br>
+        <textarea name="informacoes" id="informacoes" cols="30" rows="10"></textarea>
+      </div>
+   
+      <button type="submit">Enviar</button>
+    </form>
+</form>
+  </body>
+</html>
+EXERCÍCIO 8 ---------------------------------------------------------------------------------------------------------
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Filhotes Fofos</title>
+    <!-- <link rel="stylesheet" href="style.css" /> -->
+  </head>
+  <body>
+    <header>
+      <h1>Loja de filhotes</h1>
+      <ul>
+        <li>Cachorros lindos</li>
+        <a
+          href="https://www.google.com/search?q=google+cachorros&oq=google+cachor&gs_lcrp=EgZjaHJvbWUqDQgAEAAYiwMYgAQY-AUyDQgAEAAYiwMYgAQY-AUyBggBEEUYOTIHCAIQABiABDIHCAMQABiABDIHCAQQABiABDIHCAUQABiABDIHCAYQABiABDIHCAcQABiABDIHCAgQABiABDIHCAkQABiABNIBCDc2MzJqMWo3qAIAsAIA&sourceid=chrome&ie=UTF-8"
+          target="_blank"
+        >
+          <img src="dog1.jpg" alt="" width="200" />
+        </a>
+
+        <li>Gatinhos fofos</li>
+        <a
+          href="https://www.google.com/search?q=google+gatos&sca_esv=6a81f2bd04fd845e&sxsrf=AHTn8zrDn1qaQTOBnB9WlDTn4CZlRYyz0g%3A1744075674178&ei=mnv0Z47GCtLb1sQPif3aeQ&ved=0ahUKEwiO-5SYpMeMAxXSrZUCHYm-Ng8Q4dUDCBA&uact=5&oq=google+gatos&gs_lp=Egxnd3Mtd2l6LXNlcnAaAhgDIgxnb29nbGUgZ2F0b3MyChAAGIAEGLEDGAoyChAAGIAEGLEDGAoyChAAGIAEGLEDGAoyChAAGIAEGLEDGAoyChAAGIAEGLEDGAoyChAAGIAEGLEDGAoyChAAGIAEGAoYiwMyDRAAGIAEGLEDGAoYiwMyChAAGIAEGAoYiwMyChAAGIAEGAoYiwNIpQ5Q_AVYxQpwAngBkAEAmAGEAaAB9QSqAQMwLjW4AQPIAQD4AQGYAgegApAFwgIKEAAYsAMY1gQYR8ICDRAuGIAEGLADGEMYigXCAggQABiABBixA8ICCxAAGIAEGLEDGIMBwgIFEAAYgATCAgoQABiABBgUGIcCwgIHEAAYgAQYCsICDhAAGIAEGLEDGIMBGIsDmAMAiAYBkAYJkgcDMi41oAe6HbIHAzAuNbgHiAU&sclient=gws-wiz-serp"
+          target="_blank"
+        >
+          <img src="cat1.jpg" alt="" width="200" />
+        </a>
+
+        <li>Cobras assustadoramente dóceis</li>
+        <a
+          href="https://www.google.com/search?q=google+cobras+d%C3%B3ceis&sca_esv=6a81f2bd04fd845e&sxsrf=AHTn8zpIYnTY6R_dMYHjb-_UNN7Je-XZUw%3A1744075734145&ei=1nv0Z-LNCMbb1sQP0sPksAQ&ved=0ahUKEwjikOG0pMeMAxXGrZUCHdIhGUYQ4dUDCBA&uact=5&oq=google+cobras+d%C3%B3ceis&gs_lp=Egxnd3Mtd2l6LXNlcnAaAhgCIhVnb29nbGUgY29icmFzIGTDs2NlaXMyBRAhGKABMgUQIRigAUjsIVDDCljsHnADeAGQAQCYAYsBoAHsDKoBBDAuMTO4AQPIAQD4AQGYAhCgAqwNwgIKEAAYsAMY1gQYR8ICDRAuGIAEGLADGEMYigXCAgoQIxiABBgnGIoFwgILEAAYgAQYsQMYgwHCAggQABiABBixA8ICDhAAGIAEGLEDGIMBGIsDwgILEAAYgAQYsQMYiwPCAgUQABiABMICCBAAGIAEGIsDwgIGEAAYFhgemAMAiAYBkAYJkgcEMy4xM6AHmj-yBwQwLjEzuAegDQ&sclient=gws-wiz-serp"
+          target="_blank"
+        >
+          <img src="snake1.jpg" alt="" width="200" />
+        </a>
+
+        <li>Exóticos apaixonantes</li>
+        <img src="/pig1.jpg" alt="" width="200" />
+      </ul>
+
+      <a href="https://www.google.com.br" target="_blank">
+        <img
+          src="pig1.jpg"
+          alt="Foto de um filhote de porco fofinho."
+          width="300"
+          height="200"
+        />
+      </a>
+    </header>
+  </body>
+</html>
 
 
 
