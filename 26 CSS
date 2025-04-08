@@ -1,0 +1,85 @@
+Quiz sobre Java usando padrão de cores color-hex Facebook----------------------------------------------------
+style CSS----------------------------------------------------------------------------------------------------
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #8b9dc3;
+}
+
+header {
+  background-color: #3b5998;
+  color: white;
+  text-align: center;
+  margin-bottom: 20px;
+  padding: 16px;
+}
+
+h1 {
+  font-size: 36px;
+}
+
+.perguntas {
+  max-width: 600px;
+  margin: auto;
+  background-color: #fff;
+  padding: 16px;
+  border-radius: 8px;
+}
+
+index.html--------------------------------------------------------------------------------------------------------
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Perguntas sobre Java</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Perguntas sobre Java</h1>
+    </header>
+    <main>
+      <div class="perguntas">
+        <form>
+          <div class="pergunta">
+            <h3>
+              <br />Qual é o tipo de tipo de dado para número inteiros em java?
+            </h3>
+            <br />
+            <input type="radio" name="pergunta1" value="a" /> float <br />
+            <input type="radio" name="pergunta1" value="b" /> int <br />
+            <input type="radio" name="pergunta1" value="c" /> static <br />
+          </div>
+
+          <div>
+            <h3><br />Qual palavra-chave define uma constante em Java?</h3>
+            <br />
+            <input type="radio" name="pergunta2" value="a" /> final <br />
+            <input type="radio" name="pergunta2" value="b" /> const <br />
+            <input type="radio" name="pergunta2" value="c" /> static <br />
+          </div>
+
+          <div>
+            <h3><br />Qual é a função da classe Scanner em Java?</h3>
+            <br />
+            <input type="radio" name="pergunta3" value="a" /> Ler dados do
+            usuário <br />
+            <input type="radio" name="pergunta3" value="b" /> Escrever dados no
+            console <br />
+            <input type="radio" name="pergunta3" value="c" /> Calcular valores
+            matemáticos <br />
+          </div>
+
+          <br />
+          <button type="submit">Enviar resposta</button>
+        </form>
+      </div>
+    </main>
+    <footer></footer>
+  </body>
+</html>
