@@ -195,26 +195,17 @@ Desafio ------------------------------------------------------------------------
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <p> Crie um cartão de perfil com:
-        Imagem de perfil redonda (use border-radius)
-        Nome do usuário em destaque
-        Um botão de "Seguir" com efeito :hover
-        Use uma classe para o cartão e um ID para o botão
-    </p>
-
-    <div>
-        <div>
+      <div class="cartao">
+        <div id="imagem">
             <img src="dog1.jpg" alt="foto do perfil">
         </div>
-        <div>
+        <div id="nome">
             <h2>Fabricia Trevisan</h2>
         </div>
     </div>
-    
-
-
-
-
+    <div id="botao">
+        <button>Seguir</button>
+    </div>
   </body>
 </html>
 
