@@ -184,6 +184,38 @@ button:hover {
   background-color: blue;
   color: aliceblue;
 }
-exercício 9 ------------------------------------------------------------------------------------------------------------------
+Desafio ------------------------------------------------------------------------------------------------------------------
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <p> Crie um cartão de perfil com:
+        Imagem de perfil redonda (use border-radius)
+        Nome do usuário em destaque
+        Um botão de "Seguir" com efeito :hover
+        Use uma classe para o cartão e um ID para o botão
+    </p>
+
+    <div>
+        <div>
+            <img src="dog1.jpg" alt="foto do perfil">
+        </div>
+        <div>
+            <h2>Fabricia Trevisan</h2>
+        </div>
+    </div>
+    
+
+
+
+
+  </body>
+</html>
 
 
